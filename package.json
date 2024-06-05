@@ -13,6 +13,7 @@
     "@formatjs/intl-pluralrules": "5.2.4",
     "@formatjs/intl-relativetimeformat": "11.2.4",
     "@fortawesome/fontawesome-free": "6.1.1",
+     "aos": "^2.3.4",
     "@popperjs/core": "^2.11.6",
     "animate.css": "4.1.1",
     "apexcharts": "3.35.0",
@@ -45,6 +46,7 @@
     "yup": "^1.0.0"
   },
   "devDependencies": {
+     "@types/aos": "^3.0.7",
     "@types/bootstrap": "5.1.10",
     "@types/chart.js": "2.9.37",
     "@types/jest": "29.5.2",
@@ -71,7 +73,7 @@
     "sass-loader": "13.2.0",
     "typescript": "^5.3.3",
     "vite": "^4.4.5",
-    "webpack": "5.74.0",
+    "webpack": "5.76.0",
     "webpack-cli": "5.1.4",
     "webpack-rtl-plugin": "^2.0.0"
   }
