@@ -14,26 +14,18 @@ const Footer: FC = () => {
         <div className='text-gray-900 order-2 order-md-1'>
           <span className='text-muted fw-semibold me-2'>{new Date().getFullYear()} &copy;</span>
           <a href='#' className='text-gray-800 text-hover-primary'>
-            Keenthemes
+            kofi-k
           </a>
         </div>
         {/* end::Copyright */}
 
+        {/*todo socials for footer*/}
+
         {/* begin::Nav */}
         <ul className='menu menu-gray-600 menu-hover-primary fw-semibold order-1'>
           <li className='menu-item'>
-            <a href='#' className='menu-link ps-0 pe-2'>
-              About
-            </a>
-          </li>
-          <li className='menu-item'>
             <a href='#' className='menu-link pe-0 pe-2'>
               Contact
-            </a>
-          </li>
-          <li className='menu-item'>
-            <a href='#' className='menu-link pe-0'>
-              Purchase
             </a>
           </li>
         </ul>

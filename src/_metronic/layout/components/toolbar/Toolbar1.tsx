@@ -32,25 +32,15 @@ const Toolbar1 = () => {
                 data-kt-menu-placement='bottom-end'
                 data-kt-menu-flip='top-end'
               >
-                <KTIcon iconName='filter' className='fs-5 me-1' />
-                Filter
+                <KTIcon iconName='briefcase' className='fs-5 me-1' />
+                Hire Me
               </a>
 
               {/* end::Menu */}
             </div>
             {/* end::Wrapper */}
 
-            {/* begin::Button */}
 
-            <a
-              className='btn bg-body btn-active-color-primary'
-              id='kt_toolbar_primary_button'
-              data-bs-theme='light'
-              onClick={() => setShowCreateAppModal(true)}
-            >
-              Create
-            </a>
-            {/* end::Button */}
           </div>
           {/* end::Actions */}
         </div>

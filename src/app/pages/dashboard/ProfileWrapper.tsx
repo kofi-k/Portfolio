@@ -81,4 +81,4 @@ const ProfileWrapper = () => {
     )
 }
 
-export {ProfileWrapper}
+export default ProfileWrapper

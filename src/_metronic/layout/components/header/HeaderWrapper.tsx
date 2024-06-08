@@ -48,7 +48,7 @@ export function HeaderWrapper() {
         </div>
 
         <div className='header-logo me-5 me-md-10 flex-grow-1 flex-lg-grow-0'>
-          <Link to='/'>
+          <Link to='/profile'>
             <img
               alt='Logo'
               src={toAbsoluteUrl('logo/k_logo_dark.png')}
