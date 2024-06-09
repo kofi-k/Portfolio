@@ -1,0 +1,11 @@
+// _spotlight.scss
+#spotlight {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(50vw circle at var(--mouse-x) var(--mouse-y), var($kofik-s-cursor-light-dark), transparent 50%);
+  opacity: 0.75;
+  z-index: 1;
+}

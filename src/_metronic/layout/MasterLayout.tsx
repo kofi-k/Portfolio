@@ -30,6 +30,7 @@ const MasterLayout: FC<WithChildren> = ({children}) => {
                     <HeaderWrapper/>
                     <Outlet/>
                     <Footer/>
+                    {/*<Spotlight/>*/}
                 </div>
             </div>
 
