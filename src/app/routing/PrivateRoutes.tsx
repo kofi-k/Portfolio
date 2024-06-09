@@ -6,7 +6,7 @@ import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
 import {WithChildren} from '../../_metronic/helpers'
 
 const PrivateRoutes = () => {
-    const ProfileWrapper = lazy(() => import('../pages/dashboard/ProfileWrapper'))
+    const ProfileWrapper = lazy(() => import('../pages/profile/ProfileWrapper'))
 
 
     return (
