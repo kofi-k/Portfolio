@@ -4,6 +4,9 @@ import {Content} from '../../../_metronic/layout/components/Content'
 import {toAbsoluteUrl} from "../../../_metronic/helpers";
 import {StatsWidget} from "./StatsWidget.tsx";
 import {profileStats} from "./ProfileStats.tsx";
+import {WhatIOffer} from "./WhatIOffer.tsx";
+import {VoiceOfThePeople} from "./VoiceOfThePeople.tsx";
+import {FancyFooter} from "./FancyFooter.tsx";
 
 const ProfilePage = () => (
     <>
@@ -65,6 +68,9 @@ const ProfilePage = () => (
                     ))
                 }
             </div>
+            <WhatIOffer/>
+            <VoiceOfThePeople/>
+            <FancyFooter/>
 
 
         </Content>
