@@ -7,6 +7,7 @@ import {profileStats} from "./ProfileStats.tsx";
 import {WhatIOffer} from "./WhatIOffer.tsx";
 import {VoiceOfThePeople} from "./VoiceOfThePeople.tsx";
 import {FancyFooter} from "./FancyFooter.tsx";
+import React from "react";
 
 const ProfilePage = () => (
     <>
@@ -71,8 +72,6 @@ const ProfilePage = () => (
             <WhatIOffer/>
             <VoiceOfThePeople/>
             <FancyFooter/>
-
-
         </Content>
     </>
 )
