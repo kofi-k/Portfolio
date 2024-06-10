@@ -6,6 +6,7 @@ Visit the main site at [kofi-k](https://kofik.github.io/kofi-k-profile-page/)
 
 
 <hr/>
+
 ## Installation with npm or yarn
 
 ```bash
