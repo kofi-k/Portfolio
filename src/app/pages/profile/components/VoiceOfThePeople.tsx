@@ -1,4 +1,4 @@
-import {KTIcon, toAbsoluteUrl} from "../../../_metronic/helpers";
+import {KTIcon, toAbsoluteUrl} from "../../../../_metronic/helpers";
 
 type Props = {
     nameOfClient: string;
@@ -17,7 +17,7 @@ export const VoiceOfThePeople = () => {
             <div className={'row g-5 g-xl-8 mt-7 align-items-center h-100'}>
                 <div className={'col-lg-6 col-md-6 col-sm-12'}>
                     <img
-                        className='rounded-4 h-auto w-100 bgi-no-repeat bgi-position-center bgi-size-cover bgi'
+                        className='rounded-bottom-pill  rounded-top-circle h-100 bgi-no-repeat bgi-position-center bgi-size-cover bgi'
                         src={toAbsoluteUrl('media/img-1.jpg')}
                         alt='img'
                     />
@@ -25,7 +25,7 @@ export const VoiceOfThePeople = () => {
                 <div className={'col-lg-6 col-md-6 col-sm-12 g-5 '}>
                     {
                         reviews.map((item, index) => (
-                            <div className={'mb-5 '}>
+                            <div className={'mb-5  '}>
                                 <ReviewCard nameOfClient={item.nameOfClient} clientPosition={item.clientPosition}
                                             clientReview={item.clientReview}
                                     // color={item.color}
@@ -47,7 +47,7 @@ export const ReviewCard = (props: Props) => {
         <div
             className={`card card-custom card-stretch rounded-4 bg-light-${props.color} `}>
             <div className={'card-body'}>
-                <p className={`text-start fs-5 fw-light text-${props.color} text-gray-800`}>{`"${props.clientReview}"`}</p>
+                <p className={`text-start fs-5 fw-light tex text-gray-800`}>{`"${props.clientReview}"`}</p>
                 <div className={'d-flex flex-row justify-content-between align-items-baseline'}>
                     <div className={'d-flex flex-column'}>
                         <h4 className={`fw-bolder fs-2 text-start mt-5 text-${props.color}`}>{props.nameOfClient}</h4>
@@ -57,7 +57,7 @@ export const ReviewCard = (props: Props) => {
 
                     <div className={'row g-5'}>
                         {[...Array(5)].map((_, index) => (
-                            <div className={'col-lg-1 col-md-1 col-sm-1'}>
+                            <div className={'col-1'}>
                                 <KTIcon
                                     key={index}
                                     iconName={'star'}
