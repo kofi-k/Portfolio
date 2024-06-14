@@ -12,7 +12,7 @@ const PrivateRoutes = () => {
     return (
         <Routes>
             <Route element={<MasterLayout/>}>
-                <Route path='auth/*' element={<Navigate to='/profile'/>}/>
+                <Route path='/*' element={<Navigate to='/profile'/>}/>
                 {/* Pages */}
                 <Route path='profile' element={
                     <SuspensedView>
@@ -20,7 +20,7 @@ const PrivateRoutes = () => {
                     </SuspensedView>
                 }/>
                 {/* Page Not Found */}
-                <Route path='*' element={<Navigate to='/error/404'/>}/>
+                {/*<Route path='*' element={<Navigate to='/error/404'/>}/>*/}
             </Route>
         </Routes>
     )
