@@ -31,7 +31,7 @@ export const FancyFooter = () => {
                                 duration: 0.75,
                                 ease: "linear",
                             }}
-                            className='fs-2hx fw-bolder'>kofi k.
+                            className='fs-2hx fw-bolder'>kofi k<span className={'text-primary'}>.</span>
                         </motion.h3>
 
                         <motion.div

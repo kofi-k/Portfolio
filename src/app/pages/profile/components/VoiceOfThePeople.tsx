@@ -26,15 +26,26 @@ export const VoiceOfThePeople = () => {
     return (
         <>
             <FramerReveal>
-                <div className={'d-flex flex-column mt-10'}>
+                <div className={'d-flex flex-column mt-10 '}>
                     <h2 className={'display-3 fw-bold mb-5 text-center'}>Voice Of The People</h2>
                     <span className={'text-center fs-3 '}>What my clients say about my work</span>
                 </div>
             </FramerReveal>
             <div className={'row g-5 g-xl-8 mt-7 align-items-center h-100'}>
                 <div className={'col-lg-6 col-md-6 col-sm-12 justify-content-center'}>
-                    <img
-                        className='rounded-bottom-pill  rounded-top-circle h-100 bgi-no-repeat bgi-position-center bgi-size-cover bgi'
+                    <motion.img
+                        animate={isInView ? 'visible' : 'hidden'}
+                        initial={'hidden'}
+                        variants={{
+                            hidden: {opacity: 0, scale: 0.87},
+                            visible: {opacity: 1, scale: 1},
+                        }}
+                        transition={{
+                            type: 'tween',
+                            duration: 0.75,
+                            ease: 'linear',
+                        }}
+                        className='rounded-bottom-pill  rounded-top-circle  h-100 bgi-no-repeat bgi-position-center bgi-size-cover bgi'
                         src={toAbsoluteUrl('media/img-1.jpg')}
                         alt='img'
                     />

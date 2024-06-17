@@ -16,10 +16,10 @@ export const Stats = () => {
     }, [isInView, mainControls]);
 
     return (
-        <div className={'row g-5 g-xl-8 mt-7 w-100'} ref={ref}>
+        <div className={'row g-5 g-xl-8 mt-7 w-100'}>
             {
                 profileStats.map((stat, index) => (
-                    <motion.div className={'col-lg-3 col-md-3 col-sm-6'}
+                    <motion.div ref={ref} className={'col-lg-3 col-md-3 col-sm-6'}
                                 animate={isInView ? 'visible' : 'hidden'}
                                 initial={'hidden'}
                                 variants={{

@@ -12,7 +12,7 @@ export const CallToAction = () => {
                 <div className='card-body my-10'>
                     <div className='d-flex flex-center flex-column flex-column-fluid mx-15'>
                         <h1 className='text-start fs-4hx text-white fw-bolder mb-5 w-100'>
-                            Ready to experience my <br/><span
+                            Ready to experience some <br/><span
                             className={'text-decoration-underline fst-italic'}>magic?</span>
                         </h1>
 

@@ -1,11 +1,23 @@
 import {FramerReveal} from "./FramerReveal.tsx";
 import {Content} from "../../../../_metronic/layout/components/Content.tsx";
+import React, {useEffect} from "react";
+import {motion, useAnimation, useInView} from "framer-motion";
 
 type Props = {
     title: string;
     description: string;
 }
 export const WhatIOffer = () => {
+    const ref = React.useRef<HTMLDivElement | null>(null);
+    const isInView = useInView(ref, {once: true});
+    const mainControls = useAnimation()
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start('visible').then(
+                () => mainControls.set('hidden')
+            )
+        }
+    }, [isInView, mainControls]);
     return (
         <>
             <div className={'separator separator-styled my-20 '}/>
@@ -22,10 +34,22 @@ export const WhatIOffer = () => {
                     </FramerReveal>
                 </Content>
                 <Content>
-                    <div className='row g-5 g-xl-8 mt-10 '>
+                    <div ref={ref} className='row g-5 g-xl-8 mt-10 '>
                         {
                             whatIdo.map((item, index) => (
-                                <div className={'col-lg-4 col-md-4 col-sm-6'}>
+                                <motion.div
+                                    animate={isInView ? 'visible' : 'hidden'}
+                                    initial={'hidden'}
+                                    variants={{
+                                        hidden: {scale: 0.7},
+                                        visible: {scale: 1}
+                                    }}
+                                    transition={{
+                                        type: 'tween',
+                                        duration: index * 0.25,
+                                        ease: "linear",
+                                    }}
+                                    className={'col-lg-4 col-md-4 col-sm-6'}>
                                     <div className={'card card-custom card-stretch border'}>
                                         <div className={'card-body'}>
                                             <h3 className={'card-title fw-bolder fs-2 text-start'}>{item.title}<span
@@ -36,7 +60,7 @@ export const WhatIOffer = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))
                         }
                     </div>
