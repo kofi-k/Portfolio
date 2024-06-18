@@ -1,4 +1,7 @@
-import {KTIcon, toAbsoluteUrl} from "../../../_metronic/helpers";
+import {motion, useAnimation, useInView} from "framer-motion";
+import {KTIcon, toAbsoluteUrl} from "../../../../_metronic/helpers";
+import {FramerReveal} from "./FramerReveal.tsx";
+import React, {useEffect} from "react";
 
 type Props = {
     nameOfClient: string;
@@ -8,29 +11,59 @@ type Props = {
     color?: string;
 }
 export const VoiceOfThePeople = () => {
+
+    const ref = React.useRef<HTMLDivElement | null>(null);
+    const isInView = useInView(ref, {once: true});
+    const mainControls = useAnimation()
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start('visible').then(
+                () => mainControls.set('hidden')
+            )
+        }
+    }, [isInView, mainControls]);
+
     return (
         <>
-            <div className={'d-flex flex-column mt-10'}>
-                <h2 className={'display-3 fw-bold mb-5 text-center'}>Voice Of The People</h2>
-                <span className={'text-center fs-3 '}>What my clients say about my work</span>
-            </div>
+            <FramerReveal>
+                <div className={'d-flex flex-column mt-10'}>
+                    <h2 className={'display-3 fw-bold mb-5 text-center'}>Voice Of The People</h2>
+                    <span className={'text-center fs-3 '}>What my clients say about my work</span>
+                </div>
+            </FramerReveal>
             <div className={'row g-5 g-xl-8 mt-7 align-items-center h-100'}>
-                <div className={'col-lg-6 col-md-6 col-sm-12'}>
+                <div className={'col-lg-6 col-md-6 col-sm-12 justify-content-center'}>
                     <img
-                        className='rounded-4 h-auto w-100 bgi-no-repeat bgi-position-center bgi-size-cover bgi'
+                        className='rounded-bottom-pill  rounded-top-circle h-100 bgi-no-repeat bgi-position-center bgi-size-cover bgi'
                         src={toAbsoluteUrl('media/img-1.jpg')}
                         alt='img'
                     />
                 </div>
-                <div className={'col-lg-6 col-md-6 col-sm-12 g-5 '}>
+                <div
+                    className={'col-lg-6 col-md-6 col-sm-12 g-5 '}
+                >
                     {
                         reviews.map((item, index) => (
-                            <div className={'mb-5 '}>
+                            <motion.div
+                                ref={ref}
+                                animate={isInView ? 'visible' : 'hidden'}
+                                initial={'hidden'}
+                                variants={{
+                                    // slide in from right
+                                    hidden: {opacity: 0, x: 80},
+                                    visible: {opacity: 1, x: 0},
+                                }}
+                                transition={{
+                                    type: 'tween',
+                                    duration: index * 0.25,
+                                    ease: "linear",
+                                }}
+                                className={'mb-5  '}>
                                 <ReviewCard nameOfClient={item.nameOfClient} clientPosition={item.clientPosition}
                                             clientReview={item.clientReview}
                                     // color={item.color}
                                             rating={item.rating}/>
-                            </div>
+                            </motion.div>
                         ))
                     }
 
@@ -38,16 +71,17 @@ export const VoiceOfThePeople = () => {
 
             </div>
         </>
-    );
+    )
+        ;
 };
 
 // review card component
-export const ReviewCard = (props: Props) => {
+const ReviewCard = (props: Props) => {
     return (
         <div
-            className={`card card-custom card-stretch rounded-4 bg-light-${props.color} `}>
+            className={`card card-custom card-stretch rounded-4 border `}>
             <div className={'card-body'}>
-                <p className={`text-start fs-5 fw-light text-${props.color} text-gray-800`}>{`"${props.clientReview}"`}</p>
+                <p className={`text-start fs-5 fw-light tex text-gray-800`}>{`"${props.clientReview}"`}</p>
                 <div className={'d-flex flex-row justify-content-between align-items-baseline'}>
                     <div className={'d-flex flex-column'}>
                         <h4 className={`fw-bolder fs-2 text-start mt-5 text-${props.color}`}>{props.nameOfClient}</h4>
@@ -57,7 +91,7 @@ export const ReviewCard = (props: Props) => {
 
                     <div className={'row g-5'}>
                         {[...Array(5)].map((_, index) => (
-                            <div className={'col-lg-1 col-md-1 col-sm-1'}>
+                            <div className={'col-1'}>
                                 <KTIcon
                                     key={index}
                                     iconName={'star'}
