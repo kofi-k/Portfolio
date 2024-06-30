@@ -260,22 +260,22 @@ $link-hover-color: $primary-active !default;
 $link-hover-decoration: none !default;
 
 
-/* The same as the previous one but with transparency for frosted glass blocks */
-$kofik-s-container-frosted: rgba(255, 255, 255, 0.5);
-
-
-/* Used as a color for a backlight effect */
-$kofik-s-backlight: rgba(255, 255, 255, 0.5);
-
-/* Used as a primary border-color */
-$kofik-s-border: rgba(0, 0, 0, 0.1);
-
-
-/* The cursor-followed backlight color. It uses the primary backlight color */
-$kofik-s-cursor-light: var($kofik-s-backlight);
-
-/* A horizontal side-fade gradient border color */
-$kofik-c-border-gradient: linear-gradient(to left, transparent, var($kofik-s-border), transparent);
+///* The same as the previous one but with transparency for frosted glass blocks */
+//$kofik-s-container-frosted: rgba(255, 255, 255, 0.5) !default;
+//
+//
+///* Used as a color for a backlight effect */
+//$kofik-s-backlight: rgba(255, 255, 255, 0.5) !default;
+//
+///* Used as a primary border-color */
+//$kofik-s-border: #F5F7FA27 !default;
+//
+//
+///* The cursor-followed backlight color. It uses the primary backlight color */
+//$kofik-s-cursor-light: var($kofik-s-backlight) !default;
+//
+///* A horizontal side-fade gradient border color */
+//$kofik-c-border-gradient: linear-gradient(to left, transparent, var($kofik-s-border), transparent) !default;
 
 
 // Paragraphs
@@ -1012,7 +1012,11 @@ $zindex-values: (
         0: 0,
         1: 1,
         2: 2,
-        3: 3
+        3: 3,
+        4: 4,
+        5: 5,
+        10: 10,
+        20: 20,
 ) !default;
 
 // Letter spacing
@@ -1242,6 +1246,33 @@ $engage-btn-color: $gray-800;
 $engage-btn-icon-color: $gray-600;
 $engage-btn-color-active: $gray-800;
 $engage-z-index: 5;
+
+// kofi masked
+$kofi-xl-br: 36px;
+$kofi-large-br: 24px;
+$kofi-default-br: 18px;
+$kofi-small-br: 12px;
+$kofi-xs-br: 6px;
+
+
+/* Shadow Themes Grid: Default Gap */
+$stg-gap: 32px;
+$stg-d-gap: 32px;
+
+/* Shadow Themes Grid: Extra Small Gap */
+$stg-xs-gap: 8px;
+
+/* Shadow Themes Grid: Small Gap */
+$stg-small-gap: 16px;
+
+/* Shadow Themes Grid: Large Gap */
+$stg-large-gap: 64px;
+
+/* Shadow Themes Grid: Extra Large Gap */
+$stg-xl-gap: 128px;
+
+/* Content text Line Height */
+$kofi-t-content-lh: 1.4em;
 
 // Social Network Colors Used With Boostrap Buttons(see: https://brandcolors.net)
 $social-colors: (

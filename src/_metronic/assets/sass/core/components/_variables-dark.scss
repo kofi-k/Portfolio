@@ -184,21 +184,20 @@ $body-color-dark: $gray-900-dark !default;
 // Style anchor elements.
 $link-color-dark: $primary-dark !default/* The same as the previous one but with transparency for frosted glass blocks */
 ;
-$kofik-s-container-frosted: #1A1D24EE;
-
+$kofik-s-container-frosted: #1A1D24EE !default;
 
 /* Used as a color for a backlight effect */
-$kofik-s-backlight-dark: #F5F7FA12;
+$kofik-s-backlight: rgba(255, 255, 255, 0.5) !default;
 
 /* Used as a primary border-color */
-$kofik-s-border-dark: #F5F7FA27;
+$kofik-s-border: #F5F7FA27 !default;
 
 
 /* The cursor-followed backlight color. It uses the primary backlight color */
-$kofik-s-cursor-light-dark: var($kofik-s-backlight-dark);
+$kofik-s-cursor-light: var($kofik-s-backlight) !default;
 
 /* A horizontal side-fade gradient border color */
-$kofik-c-border-gradient-dark: linear-gradient(to left, transparent, var($gray-400-dark), transparent);
+$kofik-c-border-gradient: linear-gradient(to left, transparent, var($kofik-s-border), transparent) !default;
 
 
 // Components

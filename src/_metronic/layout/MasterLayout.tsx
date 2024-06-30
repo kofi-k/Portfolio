@@ -33,8 +33,8 @@ const MasterLayout: FC<WithChildren> = ({children}) => {
                     {/*<Spotlight/>*/}
                 </div>
             </div>
-
             <ScrollTop/>
+
         </PageDataProvider>
     )
 }
