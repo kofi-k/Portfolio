@@ -2,6 +2,8 @@ import {FC} from 'react'
 import clsx from 'clsx'
 import {toAbsoluteUrl} from '../../../helpers'
 import {ThemeModeSwitcher,} from '../../../partials'
+import {motion} from 'framer-motion'
+
 
 const toolbarButtonMarginClass = 'ms-1 ms-lg-3',
     toolbarButtonHeightClass = 'btn-active-light-primary btn-custom w-30px h-30px w-md-40px h-md-40p',
@@ -13,13 +15,20 @@ const Topbar: FC = () => {
             <div className='topbar d-flex align-items-stretch flex-shrink-0'>
 
                 {/* begin::Theme mode */}
-                <div className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}>
+                <motion.div
+                    initial={{scale: 0.7}}
+                    animate={{scale: 1}}
+                    transition={{duration: 0.3, ease: 'easeInOut', delay: 0.35}}
+                    className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}>
                     <ThemeModeSwitcher toggleBtnClass={toolbarButtonHeightClass}/>
-                </div>
+                </motion.div>
                 {/* end::Theme mode */}
 
                 {/* begin::User */}
-                <div
+                <motion.div
+                    initial={{scale: 0.7}}
+                    animate={{scale: 1}}
+                    transition={{duration: 0.3, ease: 'easeInOut', delay: 0.45}}
                     className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}
                     id='kt_header_user_menu_toggle'
                 >
@@ -37,10 +46,7 @@ const Topbar: FC = () => {
                             alt='metronic'
                         />
                     </div>
-                    {/*<HeaderUserMenu />*/}
-                    {/* end::Toggle */}
-                </div>
-                {/* end::User */}
+                </motion.div>
             </div>
         </div>
     )
