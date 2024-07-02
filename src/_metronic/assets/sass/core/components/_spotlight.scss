@@ -5,7 +5,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(50vw circle at var(--mouse-x) var(--mouse-y), var($secondary-dark), transparent 50%);
+  background: radial-gradient(50vw circle at var(--mouse-x) var(--mouse-y), $secondary-dark, transparent 50%);
   opacity: 0.75;
   z-index: 1;
 }
@@ -103,4 +103,12 @@
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+.content-bg-gradient {
+  background-image: $content-bs-gradient
+}
+
+.content-bg-gradient-bottom {
+  background-image: $content-bs-gradient-bottom
 }

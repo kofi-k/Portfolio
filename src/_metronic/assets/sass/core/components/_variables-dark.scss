@@ -190,7 +190,7 @@ $kofik-s-container-frosted: #1A1D24EE !default;
 $kofik-s-backlight: rgba(255, 255, 255, 0.5) !default;
 
 /* Used as a primary border-color */
-$kofik-s-border: #F5F7FA27 !default;
+$kofik-s-border: rgba(245, 247, 250, 0.08) !default;
 
 
 /* The cursor-followed backlight color. It uses the primary backlight color */
@@ -198,6 +198,10 @@ $kofik-s-cursor-light: var($kofik-s-backlight) !default;
 
 /* A horizontal side-fade gradient border color */
 $kofik-c-border-gradient: linear-gradient(to left, transparent, var($kofik-s-border), transparent) !default;
+
+$content-bs-gradient: linear-gradient(180deg, $kofik-s-border, rgba(255, 255, 255, 0)) !default;
+
+$content-bs-gradient-bottom: linear-gradient(0deg, $kofik-s-border, rgba(255, 255, 255, 0)) !default;
 
 
 // Components
