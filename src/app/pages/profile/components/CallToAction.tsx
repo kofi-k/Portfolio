@@ -4,7 +4,7 @@ import {KTIcon} from "../../../../_metronic/helpers";
 export const CallToAction = () => {
     return (
         <>
-            <div className='card mb-5 mb-xl-8 bg-primary  my-20 kofi-masked-cta kofi-masked-block '
+            <div className='card mb-10 mb-xl-8 bg-primary  my-20 kofi-masked-cta kofi-masked-block '
                  style={{
                      backgroundImage: 'linear-gradient(135deg, #006AE6, #2A6DF5)',
                  }}

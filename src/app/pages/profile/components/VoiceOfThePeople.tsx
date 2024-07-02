@@ -26,7 +26,7 @@ export const VoiceOfThePeople = () => {
     return (
         <>
             <FramerReveal>
-                <div className={'d-flex flex-column mt-10 '}>
+                <div className={'d-flex flex-column my-10 '}>
                     <h2 className={'display-3 fw-bold mb-5 text-center'}>Voice Of The People</h2>
                     <span className={'text-center fs-3 '}>What my clients say about my work</span>
                 </div>
@@ -51,7 +51,7 @@ export const VoiceOfThePeople = () => {
                     />
                 </div>
                 <div
-                    className={'col-lg-6 col-md-6 col-sm-12 g-5 '}
+                    className={'col-lg-6 col-md-6 col-sm-12 g-5 mb-20'}
                 >
                     {
                         reviews.map((item, index) => (
@@ -90,7 +90,7 @@ export const VoiceOfThePeople = () => {
 const ReviewCard = (props: Props) => {
     return (
         <div
-            className={`card card-custom card-stretch rounded-4 border `}>
+            className={`card card-custom card-stretch rounded-4 border  hover-elevate-up`}>
             <div className={'card-body'}>
                 <p className={`text-start fs-5 fw-light tex text-gray-800`}>{`"${props.clientReview}"`}</p>
                 <div className={'d-flex flex-row justify-content-between align-items-baseline'}>
