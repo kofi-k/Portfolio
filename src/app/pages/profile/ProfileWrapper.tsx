@@ -25,7 +25,7 @@ const ProfilePage = () => (
                         <span className={'text-uppercase ls-1'}>
                             Who am I? I am
                         </span>
-                            <h3 className='display-3 fw-bolder'>Kofi K. <span className={'text-primary'}>Vincent,</span>
+                            <h3 className='display-3 fw-bolder'>Kofi K<span className={'text-primary'}>. Vincent,</span>
                             </h3>
 
                             <div className='mt-20 fs-3'>

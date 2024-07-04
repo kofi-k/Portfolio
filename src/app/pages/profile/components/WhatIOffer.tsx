@@ -1,17 +1,29 @@
 import {FramerReveal} from "./FramerReveal.tsx";
 import {Content} from "../../../../_metronic/layout/components/Content.tsx";
+import React, {useEffect} from "react";
+import {motion, useAnimation, useInView} from "framer-motion";
 
 type Props = {
     title: string;
     description: string;
 }
 export const WhatIOffer = () => {
+    const ref = React.useRef<HTMLDivElement | null>(null);
+    const isInView = useInView(ref, {once: true});
+    const mainControls = useAnimation()
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start('visible').then(
+                () => mainControls.set('hidden')
+            )
+        }
+    }, [isInView, mainControls]);
     return (
         <>
-            <div className={'separator separator-styled my-20 '}/>
-            <div className={'backlight-both'}>
+            <div
+                className={'content-bg-gradient bg-opacity-10 border-top border-white border-opacity-25 mt-20  mb-20'}>
                 <Content>
-                    <FramerReveal className={'w-auto'}>
+                    <FramerReveal className={'w-auto mt-20'}>
                         <h2 className={'display-3 fw-bold mb-5 text-center'}>What I Can Do For You</h2>
                     </FramerReveal>
                     <FramerReveal className={'w-auto'}>
@@ -21,28 +33,42 @@ export const WhatIOffer = () => {
                         </div>
                     </FramerReveal>
                 </Content>
-                <Content>
-                    <div className='row g-5 g-xl-8 mt-10 '>
-                        {
-                            whatIdo.map((item, index) => (
-                                <div className={'col-lg-4 col-md-4 col-sm-6'}>
-                                    <div className={'card card-custom card-stretch border'}>
-                                        <div className={'card-body'}>
-                                            <h3 className={'card-title fw-bolder fs-2 text-start'}>{item.title}<span
-                                                className={'text-primary fs-1'}>.</span></h3>
-                                            <div className={'my-20'}/>
-                                            <div className={'align-items-baseline'}>
-                                                <p className={'text-start '}>{item.description}</p>
+                <div className={'content-bg-gradient-bottom border-bottom border-white border-opacity-25'}>
+                    <Content>
+                        <div ref={ref} className='row g-5 g-xl-8 my-20'>
+                            {
+                                whatIdo.map((item, index) => (
+                                    <motion.div
+                                        animate={isInView ? 'visible' : 'hidden'}
+                                        initial={'hidden'}
+                                        variants={{
+                                            hidden: {scale: 0.7},
+                                            visible: {scale: 1}
+                                        }}
+                                        transition={{
+                                            type: 'tween',
+                                            duration: index * 0.25,
+                                            ease: "linear",
+                                        }}
+                                        className={'col-lg-4 col-md-4 col-sm-6 '}>
+                                        <div
+                                            className={'card card-custom card-stretch border shadow hover-scale'}>
+                                            <div className={'card-body'}>
+                                                <h3 className={'card-title fw-bolder fs-2 text-start'}>{item.title}<span
+                                                    className={'text-primary fs-1'}>.</span></h3>
+                                                <div className={'my-20'}/>
+                                                <div className={'align-items-baseline'}>
+                                                    <p className={'text-start '}>{item.description}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
-                </Content>
+                                    </motion.div>
+                                ))
+                            }
+                        </div>
+                    </Content>
+                </div>
             </div>
-            <div className={'separator separator-solid separator-backlight-bottom backlight-red my-20 '}/>
         </>
     );
 };

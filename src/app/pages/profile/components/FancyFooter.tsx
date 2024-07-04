@@ -15,69 +15,70 @@ export const FancyFooter = () => {
     }, [isInView, mainControls]);
     return (
         <>
-            <div className={'separator separator-solid separator-backlight-bottom  my-20 '}/>
-            <Content>
-                <div ref={ref} className={'row g-5 g-xl-8 '}>
-                    <div className={'col-xl-6 col-lg-6 col-md-6 col-sm-12'}>
-                        <motion.h3
-                            animate={isInView ? 'visible' : 'hidden'}
-                            initial={'hidden'}
-                            variants={{
-                                hidden: {scale: 0.7},
-                                visible: {scale: 1}
-                            }}
-                            transition={{
-                                type: 'tween',
-                                duration: 0.75,
-                                ease: "linear",
-                            }}
-                            className='fs-2hx fw-bolder'>kofi k.
-                        </motion.h3>
+            <div className={'content-bg-gradient border-top border-white border-opacity-25 mt-20'}>
+                <Content>
+                    <div ref={ref} className={'row g-5 g-xl-8 my-10 mb-10'}>
+                        <div className={'col-xl-6 col-lg-6 col-md-6 col-sm-12'}>
+                            <motion.h3
+                                animate={isInView ? 'visible' : 'hidden'}
+                                initial={'hidden'}
+                                variants={{
+                                    hidden: {scale: 0.7},
+                                    visible: {scale: 1}
+                                }}
+                                transition={{
+                                    type: 'tween',
+                                    duration: 0.75,
+                                    ease: "linear",
+                                }}
+                                className='fs-2hx fw-bolder'>kofi k<span className={'text-primary'}>.</span>
+                            </motion.h3>
 
-                        <motion.div
-                            ref={ref}
-                            animate={isInView ? 'visible' : 'hidden'}
-                            initial={'hidden'}
-                            variants={{
-                                hidden: {x: 50},
-                                visible: {x: 1}
-                            }}
-                            transition={{
-                                type: 'tween',
-                                duration: 0.75,
-                                ease: "linear",
-                            }}
+                            <motion.div
+                                ref={ref}
+                                animate={isInView ? 'visible' : 'hidden'}
+                                initial={'hidden'}
+                                variants={{
+                                    hidden: {x: 50},
+                                    visible: {x: 1}
+                                }}
+                                transition={{
+                                    type: 'tween',
+                                    duration: 0.75,
+                                    ease: "linear",
+                                }}
 
-                            className='mt-10 fs-6 fw-light me-20 '>
-                            A skilled android and a full-stack software developer, UI designer and
-                            chess lover from Accra, Ghana.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
-                            Sed
-                            cursus ante dapibus diam. Sed nisi.
-                        </motion.div>
+                                className='mt-10 fs-6 fw-light me-20 '>
+                                A skilled android and a full-stack software developer, UI designer and
+                                chess lover from Accra, Ghana.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
+                                libero.
+                                Sed
+                                cursus ante dapibus diam. Sed nisi.
+                            </motion.div>
 
-                        <div className={'d-flex flex-column mt-10'}>
-                            <span className={'text-uppercase fw-bolder'}>Follow me</span>
-                            {/*    todo socials*/}
+                            <div className={'d-flex flex-column mt-10'}>
+                                <span className={'text-uppercase fw-bolder'}>Follow me</span>
+                                {/*    todo socials*/}
+
+                            </div>
 
                         </div>
 
-                    </div>
-
-                    <div className={'col-xl-6 col-lg-6 col-md-6 col-sm-12'}>
-                        <div className={'d-flex flex-row justify-content-between gap-5'}>
-                            {
-                                footerItems.map((item, index) => (
-                                    <FooterItems title={item.title} items={item.items}/>
-                                ))
-                            }
+                        <div className={'col-xl-6 col-lg-6 col-md-6 col-sm-12'}>
+                            <div className={'d-flex flex-row justify-content-between gap-5'}>
+                                {
+                                    footerItems.map((item, index) => (
+                                        <FooterItems title={item.title} items={item.items}/>
+                                    ))
+                                }
+                            </div>
                         </div>
+
                     </div>
-
-                </div>
-            </Content>
-
-            <div className={'separator separator-solid separator-backlight-bottom backlight-red my-20 '}/>
+                </Content>
+            </div>
+            <div className={'separator separator-solid '}/>
 
         </>
     );

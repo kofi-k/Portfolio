@@ -5,7 +5,110 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(50vw circle at var(--mouse-x) var(--mouse-y), var($kofik-s-cursor-light-dark), transparent 50%);
+  background: radial-gradient(50vw circle at var(--mouse-x) var(--mouse-y), $secondary-dark, transparent 50%);
   opacity: 0.75;
   z-index: 1;
+}
+
+//
+///* Mouse Cursor Backlight */
+//.bringer-backlight {
+//  position: fixed;
+//  left: 0;
+//  top: 0;
+//  width: 100%;
+//  height: 100%;
+//  background: radial-gradient(50vw circle at var(--mouse-x) var(--mouse-y), var(--bringer-s-cursor-light), transparent 50%);
+//  opacity: 0.75;
+//  z-index: 1;
+//}
+
+
+/** ==========
+    06. FOOTER
+    ========== */
+#bringer-footer {
+  position: relative;
+  z-index: 22;
+}
+
+#bringer-footer.is-sticky,
+.bringer-fullscreen-page #bringer-footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: var(--bringer-s-nav);
+}
+
+#bringer-footer.is-frosted,
+.bringer-fullscreen-page #bringer-footer.is-frosted {
+  -webkit-backdrop-filter: saturate(150%) blur(12px);
+  backdrop-filter: saturate(150%) blur(12px);
+}
+
+#bringer-footer a {
+  color: var(--bringer-s-heading);
+}
+
+/* === Footer Widgets === */
+.bringer-footer-line::before,
+.bringer-footer-widgets::before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  display: block;
+  background: var(--bringer-c-border-gradient);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bringer-footer-widgets::before {
+  opacity: 0.5;
+}
+
+.bringer-footer-widgets {
+  padding: var(--stg-large-gap) 0;
+  position: relative;
+}
+
+.bringer-footer-widgets::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--bringer-s-backlight) radial-gradient(100vw circle at 50vw 35vw, var(--bringer-s-backlight), transparent 50%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.bringer-footer-widgets .stg-container {
+  position: relative;
+  z-index: 3;
+}
+
+.bringer-footer-widgets h6 {
+  margin-bottom: var(--stg-gap);
+}
+
+.bringer-widget ul {
+  margin: 0;
+  padding: 0;
+}
+
+.bringer-widget ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.content-bg-gradient {
+  background-image: $content-bs-gradient
+}
+
+.content-bg-gradient-bottom {
+  background-image: $content-bs-gradient-bottom
 }
