@@ -95,7 +95,7 @@ const ReviewCard = (props: Props) => {
         <div
             ref={divRef}
             onMouseMove={handleMouseMove}
-            className={`card card-custom card-stretch rounded-4 border  hover-elevate-up card-spotlight-effect`}>
+            className={`card card-custom card-stretch rounded-4 border  hover-elevate-up card-gradient`}>
             <div
                 style={{
                     background: `radial-gradient(50vw circle at ${position.x}px ${position.y}px, #F5F7FA09, transparent 50%)`,
@@ -127,7 +127,7 @@ const ReviewCard = (props: Props) => {
 }
 
 
-export const reviews: Props[] = [
+const reviews: Props[] = [
     {
         nameOfClient: 'John Doe',
         clientPosition: 'CEO, Doe Inc.',

@@ -25,10 +25,10 @@ export const WhatIOffer = () => {
         <>
             <div className={'custom-separator mt-20'}/>
             <div
-                className={'backlight-top  mb-20'}>
+                className={'backlight-top  mb-20 '}>
                 <Content>
                     <FramerReveal className={'w-auto mt-20'}>
-                        <h2 className={'display-3 fw-bold mb-5 text-center'}>What I Can Do For You</h2>
+                        <h2 className={'display-3 fw-bold mb-5 text-center'}>What I can help you with...</h2>
                     </FramerReveal>
                     <FramerReveal className={'w-auto'}>
                         <div className={'d-flex flex-column '}>
@@ -88,14 +88,17 @@ export const WhatIOffer = () => {
 const whatIdo: Props[] = [
     {
         title: 'Web Applications',
-        description: 'I have been working as a web developer for 2 years. I have a lot of experience in developing full stack web applications using React, TypeScript, and DotNet. for backend services'
+        description: ''
     },
     {
         title: 'Android Development',
-        description: 'I have been working as a mobile developer for 3 years. I have a lot of experience in developing mobile applications using Kotlin and Jetpack Compose.'
+        description: 'I build scalable and maintainable android applications with seamlessly slapping user interfaces. ' +
+            'My focus is on clean architecture for robustness and high performance. I build ' +
+            'with Kotlin and Jetpack Compose.'
     },
     {
-        title: 'UI/UX Design',
-        description: 'I have been working as a UI/UX designer for 2 years. I have a lot of experience in designing user interfaces and user experiences for web and mobile applications.'
+        title: 'Design',
+        description: 'With a passion for design in my bones, I have a solid track record of designing ' +
+            'and delivering lovely joubley digital designs for both web and mobile platforms.'
     },
 ]
