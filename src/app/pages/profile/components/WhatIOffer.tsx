@@ -2,6 +2,7 @@ import {FramerReveal} from "./FramerReveal.tsx";
 import {Content} from "../../../../_metronic/layout/components/Content.tsx";
 import React, {useEffect} from "react";
 import {motion, useAnimation, useInView} from "framer-motion";
+import {useMousePosition} from "../../core/helpers.ts";
 
 type Props = {
     title: string;
@@ -18,10 +19,13 @@ export const WhatIOffer = () => {
             )
         }
     }, [isInView, mainControls]);
+    const {divRef, position, handleMouseMove} = useMousePosition();
+
     return (
         <>
+            <div className={'custom-separator mt-20'}/>
             <div
-                className={'content-bg-gradient bg-opacity-10 border-top border-white border-opacity-25 mt-20  mb-20'}>
+                className={'backlight-top  mb-20'}>
                 <Content>
                     <FramerReveal className={'w-auto mt-20'}>
                         <h2 className={'display-3 fw-bold mb-5 text-center'}>What I Can Do For You</h2>
@@ -33,7 +37,7 @@ export const WhatIOffer = () => {
                         </div>
                     </FramerReveal>
                 </Content>
-                <div className={'content-bg-gradient-bottom border-bottom border-white border-opacity-25'}>
+                <div className={''}>
                     <Content>
                         <div ref={ref} className='row g-5 g-xl-8 my-20'>
                             {
@@ -52,8 +56,14 @@ export const WhatIOffer = () => {
                                         }}
                                         className={'col-lg-4 col-md-4 col-sm-6 '}>
                                         <div
+                                            ref={divRef}
+                                            onMouseMove={handleMouseMove}
+                                            style={{
+                                                background: `radial-gradient(50vw circle at ${position.x}px ${position.y}px, #F5F7FA09, transparent 50%)`,
+                                            }}
                                             className={'card card-custom card-stretch border shadow hover-scale'}>
-                                            <div className={'card-body'}>
+                                            <div
+                                                className={'card-body'}>
                                                 <h3 className={'card-title fw-bolder fs-2 text-start'}>{item.title}<span
                                                     className={'text-primary fs-1'}>.</span></h3>
                                                 <div className={'my-20'}/>
@@ -68,6 +78,7 @@ export const WhatIOffer = () => {
                         </div>
                     </Content>
                 </div>
+                <div className={'custom-separator '}/>
             </div>
         </>
     );

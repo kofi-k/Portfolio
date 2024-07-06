@@ -15,7 +15,9 @@ export const FancyFooter = () => {
     }, [isInView, mainControls]);
     return (
         <>
-            <div className={'content-bg-gradient border-top border-white border-opacity-25 mt-20'}>
+
+            <div className={'custom-separator mt-20'}/>
+            <div className={'backlight-top'}>
                 <Content>
                     <div ref={ref} className={'row g-5 g-xl-8 my-10 mb-10'}>
                         <div className={'col-xl-6 col-lg-6 col-md-6 col-sm-12'}>
@@ -78,7 +80,7 @@ export const FancyFooter = () => {
                     </div>
                 </Content>
             </div>
-            <div className={'separator separator-solid '}/>
+            <div className={'custom-separator '}/>
 
         </>
     );

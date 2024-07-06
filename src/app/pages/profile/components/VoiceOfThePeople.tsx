@@ -2,6 +2,7 @@ import {motion, useAnimation, useInView} from "framer-motion";
 import {KTIcon, toAbsoluteUrl} from "../../../../_metronic/helpers";
 import {FramerReveal} from "./FramerReveal.tsx";
 import React, {useEffect} from "react";
+import {useMousePosition} from "../../core/helpers.ts";
 
 type Props = {
     nameOfClient: string;
@@ -88,19 +89,27 @@ export const VoiceOfThePeople = () => {
 
 // review card component
 const ReviewCard = (props: Props) => {
+    const {divRef, position, handleMouseMove} = useMousePosition();
+
     return (
         <div
-            className={`card card-custom card-stretch rounded-4 border  hover-elevate-up`}>
-            <div className={'card-body'}>
+            ref={divRef}
+            onMouseMove={handleMouseMove}
+            className={`card card-custom card-stretch rounded-4 border  hover-elevate-up card-spotlight-effect`}>
+            <div
+                style={{
+                    background: `radial-gradient(50vw circle at ${position.x}px ${position.y}px, #F5F7FA09, transparent 50%)`,
+                }}
+                className={'card-body '}>
                 <p className={`text-start fs-5 fw-light tex text-gray-800`}>{`"${props.clientReview}"`}</p>
-                <div className={'d-flex flex-row justify-content-between align-items-baseline'}>
+                <div className={'d-flex flex-row justify-content-between align-items-baseline '}>
                     <div className={'d-flex flex-column'}>
                         <h4 className={`fw-bolder fs-2 text-start mt-5 text-${props.color}`}>{props.nameOfClient}</h4>
                         <span
                             className={`text-start fs-7 text-uppercase text-${props.color}`}>{props.clientPosition}</span>
                     </div>
 
-                    <div className={'row g-5'}>
+                    <div className={'row  justify-content-end align-baseline align-items-baseline'}>
                         {[...Array(5)].map((_, index) => (
                             <div className={'col-1'}>
                                 <KTIcon
