@@ -179,6 +179,23 @@ $body-bg-rgb-dark: to-rgb($body-bg-dark) !default;
 $body-color-dark: $gray-900-dark !default;
 
 
+$stg-container-width: calc(100svw - 2 * var(--stg-gap));
+
+$kofik-t-h1-fs: 48px;
+$kofik-t-h2-fs: 32px;
+$kofik-t-h3-fs: 28px;
+$kofik-t-h4-fs: 24px;
+$kofik-t-h5-fs: 20px;
+$kofik-t-h6-fs: 18px;
+$kofik-t-large-fs: 17px;
+
+$kofik-xl-br: 32px;
+$kofik-large-br: 24px;
+$kofik-default-br: 16px;
+$kofik-small-br: 8px;
+$kofik-xs-br: 4px;
+
+
 // Links
 //
 // Style anchor elements.
@@ -192,6 +209,31 @@ $kofik-s-backlight: #F5F7FA12 !default;
 /* Used as a primary border-color */
 $kofik-s-border: #F5F7FA27 !default;
 
+/* Social Icons Size */
+$kofik-socials-size: 24px;
+
+/* Extra small border radius */
+$kofik-xs-br: 8px;
+
+/* Social Items list items spacing */
+$kofik-socials-gap: 32px;
+
+
+/* Shadow Themes Grid: Default Gap */
+$stg-gap: 32px;
+$stg-d-gap: 32px;
+
+/* Shadow Themes Grid: Extra Small Gap */
+$stg-xs-gap: 8px;
+
+/* Shadow Themes Grid: Small Gap */
+$stg-small-gap: 16px;
+
+/* Shadow Themes Grid: Large Gap */
+$stg-large-gap: 64px;
+
+/* Shadow Themes Grid: Extra Large Gap */
+$stg-xl-gap: 128px;
 
 /* The cursor-followed backlight color. It uses the primary backlight color */
 $kofik-s-cursor-light: var($kofik-s-backlight) !default;
@@ -202,6 +244,26 @@ $kofik-c-border-gradient: linear-gradient(to left, transparent, $kofik-s-border,
 $content-bs-gradient: linear-gradient(180deg, $gray-200-dark, rgba(255, 255, 255, 0)) !default;
 
 $content-bs-gradient-bottom: linear-gradient(0deg, $kofik-s-border, rgba(255, 255, 255, 0)) !default;
+
+
+/* === CONTENT === */
+/* Content Large text Font Size */
+$kofik-t-large-fs: 22px;
+
+/* Content text Font Size */
+$kofik-t-content-fs: 16px;
+
+/* Content text Line Height */
+$kofik-t-content-lh: 1.4em;
+
+/* Meta Font Size */
+$kofik-t-meta-fs: 12px;
+
+/* Meta Letter Spacing */
+$kofik-t-meta-ls: 0.12em;
+
+/* Meta Font Weight */
+$kofik-t-meta-fw: 600;
 
 
 // Components

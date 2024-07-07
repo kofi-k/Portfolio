@@ -1,131 +1,174 @@
-.kofi-hero-type01 {
-  .kofi-masked-block {
-    $masked-inner-radius: var($kofi-large-br);
-  }
-
-  .kofi-masked-content {
-    width: 128px;
-    height: 128px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    a.kofi-square-button {
-      width: 112px;
-      height: 112px;
-      border-radius: var($kofi-default-br);
-    }
-
-    a span {
-      width: 32px;
-      height: 32px;
-    }
-  }
+/* === Masked Block === */
+.kofi-masked-block {
+  position: relative;
+  --masked-border-radius: $kofik-default-br;
 }
 
-.kofi-masked-cta {
-  .kofi-contact-form__response {
-    top: auto;
-    left: var($stg-large-gap);
-    bottom: calc(0.5 * (var($stg-large-gap) - var($kofi-t-content-lh)));
-  }
+.kofi-masked-content,
+.kofi-masked-content.at-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
 }
+
+.kofi-masked-content.at-top-right {
+  top: 0;
+  left: auto;
+  bottom: auto;
+  right: 0;
+}
+
+.kofi-masked-content.at-bottom-left {
+  top: auto;
+  left: 0;
+  bottom: 0;
+  right: auto;
+}
+
+.kofi-masked-content.at-bottom-right {
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: 0;
+}
+
+.kofi-masked-content.at-middle-right,
+.kofi-masked-content.at-middle-left {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.kofi-masked-content.at-middle-right {
+  right: 0;
+  left: auto;
+}
+
+.kofi-masked-content.at-middle-left {
+  left: 0;
+  right: auto;
+}
+
+.kofi-masked-content.at-top-center,
+.kofi-masked-content.at-bottom-center {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+.kofi-masked-content.at-top-center {
+  top: 0;
+  bottom: auto;
+}
+
+.kofi-masked-content.at-bottom-center {
+  bottom: 0;
+  top: auto;
+}
+
+/* Square Button */
+.kofi-masked-content .kofi-square-button,
+.kofi-masked-content.at-top-left .kofi-square-button {
+  margin: 0 $stg-small-gap $stg-small-gap 0;
+}
+
+.kofi-masked-content.at-top-right .kofi-square-button {
+  margin: 0 0 $stg-small-gap $stg-small-gap;
+}
+
+.kofi-masked-content.at-bottom-left .kofi-square-button {
+  margin: $stg-small-gap $stg-small-gap 0 0;
+}
+
+.kofi-masked-content.at-bottom-right .kofi-square-button {
+  margin: $stg-small-gap 0 0 $stg-small-gap;
+}
+
+.kofi-masked-content.at-top-center .kofi-square-button {
+  margin: 0 $stg-small-gap $stg-small-gap $stg-small-gap;
+}
+
+.kofi-masked-content.at-bottom-center .kofi-square-button {
+  margin: $stg-small-gap $stg-small-gap 0 $stg-small-gap;
+}
+
+.kofi-masked-content.at-middle-left .kofi-square-button {
+  margin: $stg-small-gap $stg-small-gap $stg-small-gap 0;
+}
+
+.kofi-masked-content.at-middle-right .kofi-square-button {
+  margin: $stg-small-gap 0 $stg-small-gap $stg-small-gap;
+}
+
+/* Content Padding */
+.kofi-masked-content > div,
+.kofi-masked-content.at-top-left > div {
+  padding: 0 $stg-small-gap $stg-small-gap 0;
+}
+
+.kofi-masked-content.at-top-right > div {
+  padding: 0 0 $stg-small-gap $stg-small-gap;
+}
+
+.kofi-masked-content.at-bottom-left > div {
+  padding: $stg-small-gap $stg-small-gap 0 0;
+}
+
+.kofi-masked-content.at-bottom-right > div {
+  padding: $stg-small-gap 0 0 $stg-small-gap;
+}
+
+.kofi-masked-content.at-top-center > div {
+  padding: 0 $stg-small-gap $stg-small-gap $stg-small-gap;
+}
+
+.kofi-masked-content.at-bottom-center > div {
+  padding: $stg-small-gap $stg-small-gap 0 $stg-small-gap;
+}
+
+.kofi-masked-content.at-middle-left > div {
+  padding: $stg-small-gap $stg-small-gap $stg-small-gap 0;
+}
+
+.kofi-masked-content.at-middle-right > div {
+  padding: $stg-small-gap 0 $stg-small-gap $stg-small-gap;
+}
+
 
 .kofi-masked-cta-content {
   text-align: right;
   width: 350px;
-
-  p {
-    display: block;
-    padding: 0 0 var($stg-d-gap) var($stg-d-gap);
-  }
 }
 
-.kofi-masked-content {
-  &.at-top-center,
-  &.at-bottom-center {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-  }
+.kofi-masked-cta-content p {
+  display: block;
+  padding: 0 0 $stg-d-gap $stg-d-gap;
+}
 
-  &.at-top-center {
-    top: 0;
-    bottom: auto;
-  }
 
-  &.at-bottom-center {
-    bottom: 0;
-    top: auto;
-  }
+.kofi-large-text {
+  font-size: $kofik-t-large-fs;
+  line-height: $kofik-t-content-lh;
+  color: $gray-900-dark;
+}
 
-  .kofi-square-button {
-    &,
-    &.at-top-left {
-      margin: 0 var($stg-small-gap) var($stg-small-gap) 0;
-    }
+[data-appear*="zoom-"].in-view,
+[data-appear*="fade-"].in-view {
+  opacity: 1;
+  transform: scale(1) translate(0, 0);
+}
 
-    &.at-top-right {
-      margin: 0 0 var($stg-small-gap) var($stg-small-gap);
-    }
 
-    &.at-bottom-left {
-      margin: var($stg-small-gap) var($stg-small-gap) 0 0;
-    }
+/* === Masked CTA === */
 
-    &.at-bottom-right {
-      margin: var($stg-small-gap) 0 0 var($stg-small-gap);
-    }
+.kofik-masked-cta-content {
+  text-align: right;
+  width: 350px;
+}
 
-    &.at-top-center {
-      margin: 0 var($stg-small-gap) var($stg-small-gap) var($stg-small-gap);
-    }
-
-    &.at-bottom-center {
-      margin: var($stg-small-gap) var($stg-small-gap) 0 var($stg-small-gap);
-    }
-
-    &.at-middle-left {
-      margin: var($stg-small-gap) var($stg-small-gap) var($stg-small-gap) 0;
-    }
-
-    &.at-middle-right {
-      margin: var($stg-small-gap) 0 var($stg-small-gap) var($stg-small-gap);
-    }
-  }
-
-  > div {
-    &,
-    &.at-top-left {
-      padding: 0 var($stg-small-gap) var($stg-small-gap) 0;
-    }
-
-    &.at-top-right {
-      padding: 0 0 var($stg-small-gap) var($stg-small-gap);
-    }
-
-    &.at-bottom-left {
-      padding: var($stg-small-gap) var($stg-small-gap) 0 0;
-    }
-
-    &.at-bottom-right {
-      padding: var($stg-small-gap) 0 0 var($stg-small-gap);
-    }
-
-    &.at-top-center {
-      padding: 0 var($stg-small-gap) var($stg-small-gap) var($stg-small-gap);
-    }
-
-    &.at-bottom-center {
-      padding: var($stg-small-gap) var($stg-small-gap) 0 var($stg-small-gap);
-    }
-
-    &.at-middle-left {
-      padding: var($stg-small-gap) var($stg-small-gap) var($stg-small-gap) 0;
-    }
-
-    &.at-middle-right {
-      padding: var($stg-small-gap) 0 var($stg-small-gap) var($stg-small-gap);
-    }
-  }
+.kofik-masked-cta-content p {
+  display: block;
+  padding: 0 0 24px 24px;
 }

@@ -1,22 +1,5 @@
-.card-spotlight-effect {
+.card-gradient {
   background-image: linear-gradient(to right, #0f172a, #06171b);
-}
-
-.spotlight {
-  pointer-events: none;
-  position: absolute;
-  inset: -1px;
-  opacity: 0;
-  transition: opacity 300ms;
-}
-
-
-.content-bg-gradient {
-  background-image: $content-bs-gradient
-}
-
-.content-bg-gradient-bottom {
-  background-image: $content-bs-gradient-bottom
 }
 
 .custom-separator {
@@ -26,12 +9,133 @@
   background: $kofik-c-border-gradient;
 }
 
+.backlight-top {
+  background: radial-gradient(100vw circle at 50vw 0%, $kofik-s-backlight, transparent 50%);
+}
+
 .kofi-block.is-frosted {
   background: $kofik-s-container-frosted;
   -webkit-backdrop-filter: saturate(150%) blur(12px);
   backdrop-filter: saturate(150%) blur(12px);
 }
 
-.backlight-top {
-  background: radial-gradient(100vw circle at 50vw 0%, $kofik-s-backlight, transparent 50%);
+
+//======= Socials list ==============
+
+ul.kofi-socials-list {
+  padding-left: 0rem;
 }
+
+ul.kofi-socials-list {
+  display: flex;
+  gap: $kofik-socials-gap;
+}
+
+ul.kofi-socials-list.stg-xs-gap {
+  gap: $stg-xs-gap;
+}
+
+ul.kofi-socials-list.stg-small-gap {
+  gap: $stg-small-gap;
+}
+
+ul.kofi-socials-list.stg-large-gap {
+  gap: $stg-large-gap;
+}
+
+ul.kofi-socials-list.stg-xl-gap {
+  gap: $stg-xl-gap;
+}
+
+
+.kofi-socials-list li {
+  list-style: none;
+  display: block;
+}
+
+.kofi-socials-list a {
+  position: relative;
+  width: calc($kofik-socials-size + 24px);
+  height: calc($kofik-socials-size + 24px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $kofik-xs-br;
+  transition: transform 0.1s, background-color 0.3s;
+  will-change: transform;
+}
+
+.kofi-socials-list a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  border-radius: inherit;
+  border: 1px solid $gray-900-dark;
+  transition: opacity 0.3s;
+  will-change: opacity;
+}
+
+.kofi-socials-list i {
+  width: $kofik-socials-size;
+  height: $kofik-socials-size;
+  background-color: $gray-900-dark;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  display: block;
+  z-index: 3;
+}
+
+.kofi-socials-500px i {
+  -webkit-mask-image: var(--icon-social-500px);
+  mask-image: var(--icon-social-500px);
+}
+
+
+.kofi-socials-facebook i {
+  -webkit-mask-image: var(--icon-social-facebook);
+  mask-image: var(--icon-social-facebook);
+}
+
+.kofi-socials-behance i {
+  -webkit-mask-image: var(--icon-social-behance);
+  mask-image: var(--icon-social-behance);
+}
+
+.kofi-socials-linkedin i {
+  -webkit-mask-image: var(--icon-social-linkedin);
+  mask-image: var(--icon-social-linkedin);
+}
+
+.kofi-socials-github i {
+  -webkit-mask-image: var(--icon-social-github);
+  mask-image: var(--icon-social-github);
+}
+
+.kofi-socials-x i {
+  -webkit-mask-image: var(--icon-social-x);
+  mask-image: var(--icon-social-x);
+}
+
+.kofi-socials-figma i {
+  -webkit-mask-image: var(--icon-social-figma);
+  mask-image: var(--icon-social-figma);
+}
+
+.kofi-socials-stackoverflow i {
+  -webkit-mask-image: var(--icon-social-stackoverflow);
+  mask-image: var(--icon-social-stackoverflow);
+}
+
+.kofi-socials-google-developers i {
+  -webkit-mask-image: var(--icon-google-developers);
+  mask-image: var(--icon-google-developers);
+}
+

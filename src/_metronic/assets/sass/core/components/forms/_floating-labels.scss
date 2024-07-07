@@ -3,18 +3,45 @@
 //
 
 .form-floating {
-    .form-control.form-control-solid {
-        &::placeholder {
-            color: transparent;    
-        }
+  .form-control.form-control-solid {
+    &::placeholder {
+      color: transparent;
     }
+  }
 
-    &.form-control-solid-bg label,
-    > :disabled ~ label,
-    > :focus ~ label {
-        &::after {
-            background-color: transparent !important;
-        }
+  &.form-control-solid-bg label,
+  > :disabled ~ label,
+  > :focus ~ label {
+    &::after {
+      background-color: transparent !important;
     }
+  }
 }
-     
+
+
+.kofi-form-spinner {
+  width: 48px;
+  height: 48px;
+  border: 2px solid $light-dark;
+  border-top-color: $gray-900-dark;
+  border-radius: 50%;
+  animation: sta_spin 1s infinite linear;
+  pointer-events: none;
+  position: absolute;
+  z-index: 15;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  display: block;
+  will-change: transform, opacity;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.kofi-contact-form.is-busy .kofi-form-spinner {
+  opacity: 1;
+}
+
+.bringer-contact-form.is-busy {
+  transform: scale(0.95);
+  pointer-events: none;
+}
