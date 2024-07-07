@@ -67,7 +67,8 @@ export const WhatIOffer = () => {
                                                 <h3 className={'card-title fw-bolder fs-2 text-start'}>{item.title}<span
                                                     className={'text-primary fs-1'}>.</span></h3>
                                                 <div className={'my-20'}/>
-                                                <div className={'align-items-baseline'}>
+                                                <div
+                                                    className={'align-items-baseline align-bottom align-text-bottom '}>
                                                     <p className={'text-start '}>{item.description}</p>
                                                 </div>
                                             </div>
@@ -87,18 +88,20 @@ export const WhatIOffer = () => {
 
 const whatIdo: Props[] = [
     {
-        title: 'Web Applications',
-        description: ''
-    },
-    {
-        title: 'Android Development',
+        title: 'Android Apps',
         description: 'I build scalable and maintainable android applications with seamlessly slapping user interfaces. ' +
             'My focus is on clean architecture for robustness and high performance. I build ' +
             'with Kotlin and Jetpack Compose.'
     },
     {
+        title: 'Enterprise-Grade Web Apps',
+        description: 'Helping organizations to achieve more and standout in the digital era by ' +
+            'leveraging de-facto frameworks to create modern, scalable web solutions. ' +
+            'No nonsense, just pure cutting-edge technology.'
+    },
+    {
         title: 'Design',
-        description: 'With a passion for design in my bones, I have a solid track record of designing ' +
+        description: 'With a passion for design in my bones, I have a solid track record of crafting ' +
             'and delivering lovely joubley digital designs for both web and mobile platforms.'
     },
 ]

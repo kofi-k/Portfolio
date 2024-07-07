@@ -4,10 +4,11 @@ import {KTIcon} from "../../../../_metronic/helpers";
 export const CallToAction = () => {
     return (
         <>
-            <div className='card mb-10 mb-xl-8 bg-primary  my-20   rounded-4 kofi-masked-block '
-                 style={{
-                     backgroundImage: 'linear-gradient(135deg, #006AE6, #2A6DF5)',
-                 }}
+            <div
+                className='card mb-10 mb-xl-8 bg-primary  my-20  rounded-4  kofi-masked-cta kofi-masked-block '
+                style={{
+                    backgroundImage: 'linear-gradient(135deg, #006AE6, #2A6DF5)',
+                }}
             >
                 <div className='card-body my-10'>
                     <div className='d-flex flex-center flex-column flex-column-fluid mx-15'>
@@ -34,11 +35,11 @@ export const CallToAction = () => {
                         </div>
                     </div>
                 </div>
-                <div className={'kofi-masked-cta-content  kofi-masked-content at-top-right '}>
-                    <p className={'fs-2x in-view'}>
-                        I will code your kick ass projects to reality ✨
-                    </p>
-                </div>
+                {/*<div className={'kofi-masked-cta-content  kofi-masked-content at-top-right '}>*/}
+                {/*    <p className={'fs-2x in-view'}>*/}
+                {/*        I will code your kick ass projects to reality ✨*/}
+                {/*    </p>*/}
+                {/*</div>*/}
             </div>
         </>
     );

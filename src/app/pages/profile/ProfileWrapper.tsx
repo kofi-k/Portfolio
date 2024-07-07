@@ -39,9 +39,9 @@ const ProfilePage = () => {
                                     className={'text-primary'}>. Vincent,</span>
                                 </h3>
 
-                                <div className='mt-20 fs-3'>
-                                    A skilled android and a full-stack software developer, UI designer and
-                                    chess lover from Accra, Ghana.
+                                <div className='mt-20 fs-1 d-flex flex-column'>
+                                    <span>Freelance</span>
+                                    <span>Android  & Full-Stack Software Developer</span>
                                 </div>
                             </div>
                         </motion.div>

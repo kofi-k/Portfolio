@@ -14,7 +14,7 @@ export const footerItems: FooterItemsProps[] = [
     },
     {
         title: 'Tech Stack',
-        items: ['Kotlin', 'Jetpack Compose', 'React', 'TypeScript', 'DotNet',]
+        items: ['Kotlin', 'Jetpack Compose', 'React', 'TypeScript', 'Bootstrap', 'ASP.Net',]
     },
     {
         title: 'Contact',
