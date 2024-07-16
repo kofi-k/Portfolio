@@ -2,6 +2,7 @@ import {motion, useAnimation, useInView} from "framer-motion";
 import {KTIcon, toAbsoluteUrl} from "../../../../_metronic/helpers";
 import {FramerReveal} from "./FramerReveal.tsx";
 import React, {useEffect} from "react";
+import {useMousePosition} from "../../core/helpers.ts";
 
 type Props = {
     nameOfClient: string;
@@ -27,7 +28,7 @@ export const VoiceOfThePeople = () => {
         <>
             <FramerReveal>
                 <div className={'d-flex flex-column my-10 '}>
-                    <h2 className={'display-3 fw-bold mb-5 text-center'}>Voice Of The People</h2>
+                    <h2 className={'display-3 fw-bold mb-5 text-center'}>...hear what the people say</h2>
                     <span className={'text-center fs-3 '}>What my clients say about my work</span>
                 </div>
             </FramerReveal>
@@ -88,19 +89,29 @@ export const VoiceOfThePeople = () => {
 
 // review card component
 const ReviewCard = (props: Props) => {
+    const {divRef, position, handleMouseMove} = useMousePosition();
+
     return (
         <div
-            className={`card card-custom card-stretch rounded-4 border  hover-elevate-up`}>
-            <div className={'card-body'}>
+            ref={divRef}
+            onMouseMove={handleMouseMove}
+            className={`card card-custom card-stretch rounded-4 border  hover-elevate-up card-gradient`}>
+            <div
+                style={{
+                    background: `radial-gradient(50vw circle at ${position.x}px ${position.y}px, #F5F7FA09, transparent 50%)`,
+                }}
+                className={'card-body '}>
                 <p className={`text-start fs-5 fw-light tex text-gray-800`}>{`"${props.clientReview}"`}</p>
-                <div className={'d-flex flex-row justify-content-between align-items-baseline'}>
+                <div
+                    className={'d-flex flex-row justify-content-between align-items-baseline align-text-bottom align-baseline bottom-0 bottom'}>
                     <div className={'d-flex flex-column'}>
                         <h4 className={`fw-bolder fs-2 text-start mt-5 text-${props.color}`}>{props.nameOfClient}</h4>
                         <span
                             className={`text-start fs-7 text-uppercase text-${props.color}`}>{props.clientPosition}</span>
                     </div>
 
-                    <div className={'row g-5'}>
+                    <div
+                        className={'row  justify-content-end '}>
                         {[...Array(5)].map((_, index) => (
                             <div className={'col-1'}>
                                 <KTIcon
@@ -118,7 +129,7 @@ const ReviewCard = (props: Props) => {
 }
 
 
-export const reviews: Props[] = [
+const reviews: Props[] = [
     {
         nameOfClient: 'John Doe',
         clientPosition: 'CEO, Doe Inc.',
@@ -127,15 +138,15 @@ export const reviews: Props[] = [
         color: 'primary'
     },
     {
-        nameOfClient: 'Jane Doe',
-        clientPosition: 'CTO, Doe Inc.',
+        nameOfClient: 'Maloe Nartey',
+        clientPosition: 'CEO, M&M Medical Center',
         clientReview: 'Kofi is a great designer. He has a lot of experience in designing user interfaces and user experiences for web and mobile applications. I highly recommend him for your design needs.',
         rating: 4,
         color: 'success'
     },
     {
-        nameOfClient: 'Michael Doe',
-        clientPosition: 'COO, Doe Inc.',
+        nameOfClient: 'Siddy Innocent',
+        clientPosition: 'CEO - Labelkin, SafeNet ',
         clientReview: 'Kofi is a great chess player. He has a lot of experience in playing chess and has won many tournaments. I highly recommend him for your chess needs.',
         rating: 3,
         color: 'info'

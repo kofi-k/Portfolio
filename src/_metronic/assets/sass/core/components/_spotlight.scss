@@ -1,114 +1,141 @@
-// _spotlight.scss
-#spotlight {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(50vw circle at var(--mouse-x) var(--mouse-y), $secondary-dark, transparent 50%);
-  opacity: 0.75;
-  z-index: 1;
+.card-gradient {
+  background-image: linear-gradient(to right, #0f172a, #06171b);
 }
 
-//
-///* Mouse Cursor Backlight */
-//.bringer-backlight {
-//  position: fixed;
-//  left: 0;
-//  top: 0;
-//  width: 100%;
-//  height: 100%;
-//  background: radial-gradient(50vw circle at var(--mouse-x) var(--mouse-y), var(--bringer-s-cursor-light), transparent 50%);
-//  opacity: 0.75;
-//  z-index: 1;
-//}
-
-
-/** ==========
-    06. FOOTER
-    ========== */
-#bringer-footer {
-  position: relative;
-  z-index: 22;
+.custom-separator {
+  width: 100vw;
+  height: 1px;
+  display: block;
+  background: $kofik-c-border-gradient;
 }
 
-#bringer-footer.is-sticky,
-.bringer-fullscreen-page #bringer-footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  background: var(--bringer-s-nav);
+.backlight-top {
+  background: radial-gradient(100vw circle at 50vw 0%, $kofik-s-backlight, transparent 50%);
 }
 
-#bringer-footer.is-frosted,
-.bringer-fullscreen-page #bringer-footer.is-frosted {
+.kofi-block.is-frosted {
+  background: $kofik-s-container-frosted;
   -webkit-backdrop-filter: saturate(150%) blur(12px);
   backdrop-filter: saturate(150%) blur(12px);
 }
 
-#bringer-footer a {
-  color: var(--bringer-s-heading);
+
+//======= Socials list ==============
+
+ul.kofi-socials-list {
+  padding-left: 0rem;
 }
 
-/* === Footer Widgets === */
-.bringer-footer-line::before,
-.bringer-footer-widgets::before {
-  content: '';
-  width: 100%;
-  height: 1px;
+ul.kofi-socials-list {
+  display: flex;
+  gap: $kofik-socials-gap;
+}
+
+ul.kofi-socials-list.stg-xs-gap {
+  gap: $stg-xs-gap;
+}
+
+ul.kofi-socials-list.stg-small-gap {
+  gap: $stg-small-gap;
+}
+
+ul.kofi-socials-list.stg-large-gap {
+  gap: $stg-large-gap;
+}
+
+ul.kofi-socials-list.stg-xl-gap {
+  gap: $stg-xl-gap;
+}
+
+
+.kofi-socials-list li {
+  list-style: none;
   display: block;
-  background: var(--bringer-c-border-gradient);
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
-.bringer-footer-widgets::before {
-  opacity: 0.5;
-}
-
-.bringer-footer-widgets {
-  padding: var(--stg-large-gap) 0;
+.kofi-socials-list a {
   position: relative;
+  width: calc($kofik-socials-size + 24px);
+  height: calc($kofik-socials-size + 24px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $kofik-xs-br;
+  transition: transform 0.1s, background-color 0.3s;
+  will-change: transform;
 }
 
-.bringer-footer-widgets::after {
+.kofi-socials-list a::before {
   content: '';
+  display: block;
   position: absolute;
   left: 0;
-  top: 0;
   bottom: 0;
   right: 0;
-  background: var(--bringer-s-backlight) radial-gradient(100vw circle at 50vw 35vw, var(--bringer-s-backlight), transparent 50%);
-  opacity: 0.5;
-  pointer-events: none;
+  top: 0;
+  border-radius: inherit;
+  border: 1px solid $gray-900-dark;
+  transition: opacity 0.3s;
+  will-change: opacity;
 }
 
-.bringer-footer-widgets .stg-container {
-  position: relative;
+.kofi-socials-list i {
+  width: $kofik-socials-size;
+  height: $kofik-socials-size;
+  background-color: $gray-900-dark;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  display: block;
   z-index: 3;
 }
 
-.bringer-footer-widgets h6 {
-  margin-bottom: var(--stg-gap);
+.kofi-socials-500px i {
+  -webkit-mask-image: var(--icon-social-500px);
+  mask-image: var(--icon-social-500px);
 }
 
-.bringer-widget ul {
-  margin: 0;
-  padding: 0;
+
+.kofi-socials-facebook i {
+  -webkit-mask-image: var(--icon-social-facebook);
+  mask-image: var(--icon-social-facebook);
 }
 
-.bringer-widget ul li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.kofi-socials-behance i {
+  -webkit-mask-image: var(--icon-social-behance);
+  mask-image: var(--icon-social-behance);
 }
 
-.content-bg-gradient {
-  background-image: $content-bs-gradient
+.kofi-socials-linkedin i {
+  -webkit-mask-image: var(--icon-social-linkedin);
+  mask-image: var(--icon-social-linkedin);
 }
 
-.content-bg-gradient-bottom {
-  background-image: $content-bs-gradient-bottom
+.kofi-socials-github i {
+  -webkit-mask-image: var(--icon-social-github);
+  mask-image: var(--icon-social-github);
 }
+
+.kofi-socials-x i {
+  -webkit-mask-image: var(--icon-social-x);
+  mask-image: var(--icon-social-x);
+}
+
+.kofi-socials-figma i {
+  -webkit-mask-image: var(--icon-social-figma);
+  mask-image: var(--icon-social-figma);
+}
+
+.kofi-socials-stackoverflow i {
+  -webkit-mask-image: var(--icon-social-stackoverflow);
+  mask-image: var(--icon-social-stackoverflow);
+}
+
+.kofi-socials-google-developers i {
+  -webkit-mask-image: var(--icon-google-developers);
+  mask-image: var(--icon-google-developers);
+}
+

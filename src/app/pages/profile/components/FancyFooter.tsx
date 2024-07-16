@@ -1,6 +1,7 @@
 import {Content} from "../../../../_metronic/layout/components/Content.tsx";
 import React, {useEffect} from "react";
 import {motion, useAnimation, useInView} from "framer-motion";
+import {footerItems, FooterItemsProps, socials} from "../../core/data.ts";
 
 export const FancyFooter = () => {
     const ref = React.useRef<HTMLDivElement | null>(null);
@@ -15,7 +16,9 @@ export const FancyFooter = () => {
     }, [isInView, mainControls]);
     return (
         <>
-            <div className={'content-bg-gradient border-top border-white border-opacity-25 mt-20'}>
+
+            <div className={'custom-separator mt-20'}/>
+            <div className={'backlight-top'}>
                 <Content>
                     <div ref={ref} className={'row g-5 g-xl-8 my-10 mb-10'}>
                         <div className={'col-xl-6 col-lg-6 col-md-6 col-sm-12'}>
@@ -48,28 +51,35 @@ export const FancyFooter = () => {
                                     ease: "linear",
                                 }}
 
-                                className='mt-10 fs-6 fw-light me-20 '>
-                                A skilled android and a full-stack software developer, UI designer and
-                                chess lover from Accra, Ghana.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                                libero.
-                                Sed
-                                cursus ante dapibus diam. Sed nisi.
+                                className='mt-10 fs-6 fw-light me-20 d-flex flex-column '>
+                                {'Beyond my skills, I bring an insane level of dedication and commitment to see your project through. ' +
+                                    'With each project, I push my work to new horizons, always putting quality first. Always exploring...'}
                             </motion.div>
 
                             <div className={'d-flex flex-column mt-10'}>
-                                <span className={'text-uppercase fw-bolder'}>Follow me</span>
-                                {/*    todo socials*/}
-
+                                <span className={'text-uppercase fw-bolder'}>Let's connect</span>
+                                <div className={'mt-3'}>
+                                    <ul className={'kofi-socials-list '}>
+                                        {
+                                            socials.map((item, index) => (
+                                                <li>
+                                                    <a href={item.href} className={`kofi-socials-${item.icon}`}>
+                                                        <i/>
+                                                    </a>
+                                                </li>
+                                            ))
+                                        }
+                                    </ul>
+                                </div>
                             </div>
-
                         </div>
 
                         <div className={'col-xl-6 col-lg-6 col-md-6 col-sm-12'}>
                             <div className={'d-flex flex-row justify-content-between gap-5'}>
                                 {
                                     footerItems.map((item, index) => (
-                                        <FooterItems title={item.title} items={item.items}/>
+                                        <FooterItems title={item.title} items={item.items}
+                                                     contactDetails={item.contactDetails}/>
                                     ))
                                 }
                             </div>
@@ -78,34 +88,14 @@ export const FancyFooter = () => {
                     </div>
                 </Content>
             </div>
-            <div className={'separator separator-solid '}/>
+            <div className={'custom-separator '}/>
 
         </>
     );
 };
 
-type FooterItemsProps = {
-    title: string;
-    items: string[];
-    index?: number;
-}
 
-const footerItems: FooterItemsProps[] = [
-    {
-        title: 'Services',
-        items: ['Mobile Development', 'Web Applications', 'UI/UX Design']
-    },
-    {
-        title: 'Tech Stack',
-        items: ['Kotlin', 'Jetpack Compose', 'React', 'TypeScript', 'DotNet',]
-    },
-    {
-        title: 'Contact',
-        items: []
-    },
-]
-
-const FooterItems: React.FC<FooterItemsProps> = ({title, items, index}) => {
+const FooterItems: React.FC<FooterItemsProps> = ({title, items, index, contactDetails}) => {
     const ref = React.useRef<HTMLDivElement | null>(null);
     const isInView = useInView(ref, {once: true});
     const mainControls = useAnimation()
@@ -137,26 +127,43 @@ const FooterItems: React.FC<FooterItemsProps> = ({title, items, index}) => {
             <span className={' text-start px-2 py-2 text-start fs-2 fw-bolder'}>{title}</span>
             <div className={'d-flex flex-column align-items-start'}>
                 {
-                    items.map((item, index) => (
-                        <motion.span
-                            // scale in from 0.7
-                            animate={isInView ? 'visible' : 'hidden'}
-                            initial={'hidden'}
-                            variants={{
-                                hidden: {scale: 0.4},
-                                visible: {scale: 1}
-                            }}
-                            transition={{
-                                type: 'tween',
-                                duration: 0.75,
-                                ease: "linear",
-                            }}
-                            className='bg-hover-light rounded-1 text-start px-2 py-2 text-gray-700'>
-                            {item}
-                        </motion.span>
+                    title === 'Contact' &&
+                    contactDetails?.map((contact, index) => (
+                        <span className={'bg-hover-light rounded-1 text-start px-2 py-2 text-gray-700'}>
+                               <i className={`bi bi-${items[index]} me-2`}/>
+                            {
+                                index === 0 ?
+                                    <a href={`mailto:${contact}`} className={'text-gray-700'}>Email</a> :
+                                    index === 1 ?
+                                        <a href={`tel:${contact}`} className={'text-gray-700'}>{contact}</a> :
+                                        <a href={contact} className={'text-gray-700'}>WhatsApp</a>
+
+                            }</span>
                     ))
+                }
+                {
+                    items
+                        .filter((item, index) => title !== 'Contact')
+                        .map((item, index) => (
+                            <motion.span
+                                animate={isInView ? 'visible' : 'hidden'}
+                                initial={'hidden'}
+                                variants={{
+                                    hidden: {scale: 0.4},
+                                    visible: {scale: 1}
+                                }}
+                                transition={{
+                                    type: 'tween',
+                                    duration: 0.75,
+                                    ease: "linear",
+                                }}
+                                className='bg-hover-light rounded-1 text-start px-2 py-2 text-gray-700'>
+                                {item}
+                            </motion.span>
+                        ))
                 }
             </div>
         </motion.div>
     );
 };
+

@@ -2,6 +2,7 @@ import {FramerReveal} from "./FramerReveal.tsx";
 import {Content} from "../../../../_metronic/layout/components/Content.tsx";
 import React, {useEffect} from "react";
 import {motion, useAnimation, useInView} from "framer-motion";
+import {useMousePosition} from "../../core/helpers.ts";
 
 type Props = {
     title: string;
@@ -18,13 +19,16 @@ export const WhatIOffer = () => {
             )
         }
     }, [isInView, mainControls]);
+    const {divRef, position, handleMouseMove} = useMousePosition();
+
     return (
         <>
+            <div className={'custom-separator mt-20'}/>
             <div
-                className={'content-bg-gradient bg-opacity-10 border-top border-white border-opacity-25 mt-20  mb-20'}>
+                className={'backlight-top  mb-20 '}>
                 <Content>
                     <FramerReveal className={'w-auto mt-20'}>
-                        <h2 className={'display-3 fw-bold mb-5 text-center'}>What I Can Do For You</h2>
+                        <h2 className={'display-3 fw-bold mb-5 text-center'}>What I can help you with...</h2>
                     </FramerReveal>
                     <FramerReveal className={'w-auto'}>
                         <div className={'d-flex flex-column '}>
@@ -33,7 +37,7 @@ export const WhatIOffer = () => {
                         </div>
                     </FramerReveal>
                 </Content>
-                <div className={'content-bg-gradient-bottom border-bottom border-white border-opacity-25'}>
+                <div className={''}>
                     <Content>
                         <div ref={ref} className='row g-5 g-xl-8 my-20'>
                             {
@@ -52,12 +56,19 @@ export const WhatIOffer = () => {
                                         }}
                                         className={'col-lg-4 col-md-4 col-sm-6 '}>
                                         <div
+                                            ref={divRef}
+                                            onMouseMove={handleMouseMove}
+                                            style={{
+                                                background: `radial-gradient(50vw circle at ${position.x}px ${position.y}px, #F5F7FA09, transparent 50%)`,
+                                            }}
                                             className={'card card-custom card-stretch border shadow hover-scale'}>
-                                            <div className={'card-body'}>
+                                            <div
+                                                className={'card-body'}>
                                                 <h3 className={'card-title fw-bolder fs-2 text-start'}>{item.title}<span
                                                     className={'text-primary fs-1'}>.</span></h3>
                                                 <div className={'my-20'}/>
-                                                <div className={'align-items-baseline'}>
+                                                <div
+                                                    className={'align-items-baseline align-bottom align-text-bottom '}>
                                                     <p className={'text-start '}>{item.description}</p>
                                                 </div>
                                             </div>
@@ -68,6 +79,7 @@ export const WhatIOffer = () => {
                         </div>
                     </Content>
                 </div>
+                <div className={'custom-separator '}/>
             </div>
         </>
     );
@@ -76,15 +88,20 @@ export const WhatIOffer = () => {
 
 const whatIdo: Props[] = [
     {
-        title: 'Web Applications',
-        description: 'I have been working as a web developer for 2 years. I have a lot of experience in developing full stack web applications using React, TypeScript, and DotNet. for backend services'
+        title: 'Android Apps',
+        description: 'I build scalable and maintainable android applications with seamlessly slapping user interfaces. ' +
+            'My focus is on clean architecture for robustness and high performance. I build ' +
+            'with Kotlin and Jetpack Compose.'
     },
     {
-        title: 'Android Development',
-        description: 'I have been working as a mobile developer for 3 years. I have a lot of experience in developing mobile applications using Kotlin and Jetpack Compose.'
+        title: 'Enterprise-Grade Web Apps',
+        description: 'Helping organizations to achieve more and standout in the digital era by ' +
+            'leveraging de-facto frameworks to create modern, scalable web solutions. ' +
+            'No nonsense, just pure cutting-edge technology.'
     },
     {
-        title: 'UI/UX Design',
-        description: 'I have been working as a UI/UX designer for 2 years. I have a lot of experience in designing user interfaces and user experiences for web and mobile applications.'
+        title: 'Design',
+        description: 'With a passion for design in my bones, I have a solid track record of crafting ' +
+            'and delivering lovely joubley digital designs for both web and mobile platforms.'
     },
 ]
