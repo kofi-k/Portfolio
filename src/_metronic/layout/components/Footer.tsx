@@ -17,8 +17,6 @@ const Footer: FC = () => {
                 </div>
                 {/* end::Copyright */}
 
-                {/*todo socials for footer*/}
-
                 {/* begin::Nav */}
                 <ul className='menu menu-gray-600 menu-hover-primary fw-semibold order-1'>
                     <li className='menu-item'>

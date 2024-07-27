@@ -12,6 +12,11 @@ body.page-loading {
     transition: none !important;
 }
 
+.rounded-circle {
+    border-radius: 50%;
+
+}
+
 .splash-screen {
     display: none;
 }

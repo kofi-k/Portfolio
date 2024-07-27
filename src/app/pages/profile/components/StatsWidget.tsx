@@ -20,11 +20,11 @@ export const StatsWidget = ({className, title, value, color}: StatsWidgetProps) 
                 }}
                 className={`card  ${className} bg-${color} hover-rotate-end`}>
                 <div
-                    className='d-flex flex-column justify-content-center align-content-center align-items-center my-10'>
+                    className='d-flex flex-column justify-content-center align-content-center align-items-center my-10 '>
                     <span className={'display-3 fw-bolder'}>
                         {value}
                     </span>
-                    <span className='fs-5'>
+                    <span className='fs-5 text-center'>
                         {title}
                     </span>
                 </div>

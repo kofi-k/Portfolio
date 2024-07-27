@@ -46,8 +46,8 @@ export const VoiceOfThePeople = () => {
                             duration: 0.75,
                             ease: 'linear',
                         }}
-                        className='rounded-bottom-pill  rounded-top-circle  h-100 bgi-no-repeat bgi-position-center bgi-size-cover bgi'
-                        src={toAbsoluteUrl('media/img-1.jpg')}
+                        className='rounded-bottom-pill  rounded-top-circle  '
+                        src={toAbsoluteUrl('media/avatars/profile.jpg')}
                         alt='img'
                     />
                 </div>
@@ -130,13 +130,7 @@ const ReviewCard = (props: Props) => {
 
 
 const reviews: Props[] = [
-    {
-        nameOfClient: 'John Doe',
-        clientPosition: 'CEO, Doe Inc.',
-        clientReview: 'Kofi is a great developer. He is very skilled and has a lot of experience in developing web and mobile applications. I highly recommend him for your development needs.',
-        rating: 5,
-        color: 'primary'
-    },
+
     {
         nameOfClient: 'Maloe Nartey',
         clientPosition: 'CEO, M&M Medical Center',

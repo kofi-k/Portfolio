@@ -10,7 +10,7 @@ $prefix: bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
 $coal-100: #15171C !default;
 $coal-200: #13141A !default;
 $coal-300: #111217 !default;
-$coal-400: #0F1014 !default;
+$coal-400: #010101 !default;
 $coal-500: #0D0E12 !default;
 $coal-600: #0B0C10 !default;
 $coal-black: #000000 !default;
@@ -100,7 +100,7 @@ $danger-clarity: rgba(#F8285A, 0.2) !default;
 $danger-inverse: $white !default;
 
 // Dark colors
-$dark: #1E2129 !default;
+$dark: #111318 !default;
 $dark-active: #111318 !default;
 $dark-light: #F9F9F9 !default;
 $dark-clarity: rgba(#1E2129, 0.2) !default;

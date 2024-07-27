@@ -27,7 +27,9 @@ ul.kofi-socials-list {
 }
 
 ul.kofi-socials-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($kofik-socials-size, 1fr));
+
   gap: $kofik-socials-gap;
 }
 
