@@ -9,6 +9,7 @@ import {CallToAction} from "./components/CallToAction.tsx";
 import {motion} from "framer-motion";
 import {Stats} from "./components/Stats.tsx";
 import {useMousePosition} from "../core/helpers.ts";
+import {FlipLink} from "../../animation/Fliplink.tsx";
 
 const ProfilePage = () => {
     const {divRef, position, handleMouseMove} = useMousePosition();
@@ -17,7 +18,7 @@ const ProfilePage = () => {
         <>
             {/*<Toolbar/>*/}
             <div className={'px-20 d-flex justify-content-center vh-100'}>
-                <div className='row g-5 g-xl-8 h-100 align-items-center'>
+                <div className='row g-10 g-xl-8 align-items-center'>
                     <div className='col-xl-7 col-lg-7 col-md-6 col-sm-12'>
                         <motion.div
                             initial={{x: -50, opacity: 0, scale: 0}}
@@ -35,12 +36,10 @@ const ProfilePage = () => {
                         <span className={'text-uppercase text-muted ls-1'}>
                             Who am I? I am
                         </span>
-                            <h3 className='fs-7x  fw-bolder ls-5'>Kofi K<span
-                                className={'text-primary ls-5'}>. Vincent,</span>
-                            </h3>
-
-                            <div className='mt-10 text-muted fs-2 d-flex flex-column'>
-                                <span>your full-stack software developer</span>
+                            <FlipLink href={'#'} children={'Kofi.K'} className={'text-white fs-7x fw-bolder'}/>
+                            <FlipLink href={'#'} children={'Vincent,'} className={'text-primary fs-7x fw-bolder'}/>
+                            <div className='d-flex flex-row mt-10 text-muted fs-2 d-flex flex-column'>
+                                <span>a full-stack software developer</span>
                             </div>
                         </motion.div>
                     </div>
@@ -56,20 +55,24 @@ const ProfilePage = () => {
                             damping: 10,
                             stiffness: 100
                         }}
-                        className='col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12'
+                        className='col-xl-5 col-lg-5 col-md-6 col-sm-12'
                     >
                         <img
-                            className='rounded-bottom-pill rounded-top-circle '
+                            className='rounded-bottom-pill rounded-top-circle w-xxl-100 h-xxl-100 w-xl-100 h-xl-100 min-w-300px min-h-300px w-sm-50px '
                             src={toAbsoluteUrl('media/avatars/profile.jpg')}
                             alt='profile'
                         />
+
+
                     </motion.div>
                 </div>
             </div>
             <Content>
                 <Stats/>
             </Content>
+            <div className={'custom-separator mt-20'}/>
             <WhatIOffer/>
+            <div className={'custom-separator my-10'}/>
             <Content>
                 <VoiceOfThePeople/>
                 <CallToAction/>

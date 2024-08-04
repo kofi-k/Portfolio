@@ -23,12 +23,15 @@ export const Stats = () => {
                                 animate={isInView ? 'visible' : 'hidden'}
                                 initial={'hidden'}
                                 variants={{
-                                    hidden: {scale: 0.7},
-                                    visible: {scale: 1}
+                                    hidden: {scale: 0, opacity: 0, y: 50},
+                                    visible: {scale: 1, opacity: 1, y: 0},
                                 }}
                                 transition={{
-                                    type: 'tween',
-                                    duration: index * 0.25,
+                                    type: 'spring',
+                                    stiffness: 200,
+                                    damping: 15,
+                                    delay: index * 0.15,
+                                    duration: 0.5,
                                     ease: "linear",
                                 }}
                     >

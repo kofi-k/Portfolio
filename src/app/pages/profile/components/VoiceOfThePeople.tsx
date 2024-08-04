@@ -1,6 +1,6 @@
 import {motion, useAnimation, useInView} from "framer-motion";
 import {KTIcon, toAbsoluteUrl} from "../../../../_metronic/helpers";
-import {FramerReveal} from "./FramerReveal.tsx";
+import {FramerReveal} from "../../../animation/FramerReveal.tsx";
 import React, {useEffect} from "react";
 import {useMousePosition} from "../../core/helpers.ts";
 
@@ -25,15 +25,16 @@ export const VoiceOfThePeople = () => {
     }, [isInView, mainControls]);
 
     return (
-        <>
-            <FramerReveal>
-                <div className={'d-flex flex-column my-10 '}>
-                    <h2 className={'display-3 fw-bold mb-5 text-center'}>...hear what the people say</h2>
-                    <span className={'text-center fs-3 '}>What my clients say about my work</span>
-                </div>
+        <div className={'d-flex flex-column flex-center'}>
+            <FramerReveal className={'w-auto mt-15'}>
+                <h2 className={'display-3 fw-bold '}>...hear what the people say</h2>
             </FramerReveal>
-            <div className={'row g-5 g-xl-8 mt-7 align-items-center h-100'}>
-                <div className={'col-lg-6 col-md-6 col-sm-12 justify-content-center'}>
+            <FramerReveal className={'w-auto mb-10'}>
+                <span className={'fs-3 '}>What my clients say about my work</span>
+            </FramerReveal>
+            <div className={'row g-5 g-xl-8 mt-7 align-items-center '}>
+                <div
+                    className={'col-lg-6 col-xl-6 col-xxl-6 col-md-6 col-sm-12 justify-content-center d-none d-lg-flex '}>
                     <motion.img
                         animate={isInView ? 'visible' : 'hidden'}
                         initial={'hidden'}
@@ -46,43 +47,41 @@ export const VoiceOfThePeople = () => {
                             duration: 0.75,
                             ease: 'linear',
                         }}
-                        className='rounded-bottom-pill  rounded-top-circle  '
+                        className='rounded-bottom-pill rounded-top-circle w-xxl-75 h-xxl-75 w-xl-75 h-xl-75 min-w-200px min-h-200px w-sm-50px '
                         src={toAbsoluteUrl('media/avatars/profile.jpg')}
                         alt='img'
                     />
                 </div>
-                <div
-                    className={'col-lg-6 col-md-6 col-sm-12 g-5 mb-20'}
-                >
-                    {
-                        reviews.map((item, index) => (
-                            <motion.div
-                                ref={ref}
-                                animate={isInView ? 'visible' : 'hidden'}
-                                initial={'hidden'}
-                                variants={{
-                                    // slide in from right
-                                    hidden: {opacity: 0, x: 80},
-                                    visible: {opacity: 1, x: 0},
-                                }}
-                                transition={{
-                                    type: 'tween',
-                                    duration: index * 0.25,
-                                    ease: "linear",
-                                }}
-                                className={'mb-5  '}>
-                                <ReviewCard nameOfClient={item.nameOfClient} clientPosition={item.clientPosition}
-                                            clientReview={item.clientReview}
-                                    // color={item.color}
-                                            rating={item.rating}/>
-                            </motion.div>
-                        ))
-                    }
-
+                <div className={'col-lg-6 col-xl-6 col-xxl-6 col-md-12 col-sm-12 g-5 mb-20 d-md-'}>
+                    <div className={'row g-4'}>
+                        {
+                            reviews.map((item, index) => (
+                                <motion.div
+                                    ref={ref}
+                                    animate={isInView ? 'visible' : 'hidden'}
+                                    initial={'hidden'}
+                                    variants={{
+                                        // slide in from right
+                                        hidden: {opacity: 0, x: 80},
+                                        visible: {opacity: 1, x: 0},
+                                    }}
+                                    transition={{
+                                        type: 'tween',
+                                        duration: index * 0.25,
+                                        ease: "linear",
+                                    }}
+                                    className={'col-lg-6 col-md-6 col-xl-12 col-xxl-12 col-sm-6'}>
+                                    <ReviewCard nameOfClient={item.nameOfClient} clientPosition={item.clientPosition}
+                                                clientReview={item.clientReview}
+                                                rating={item.rating}/>
+                                </motion.div>
+                            ))
+                        }
+                    </div>
                 </div>
 
             </div>
-        </>
+        </div>
     )
         ;
 };
@@ -95,7 +94,7 @@ const ReviewCard = (props: Props) => {
         <div
             ref={divRef}
             onMouseMove={handleMouseMove}
-            className={`card card-custom card-stretch rounded-4 border  hover-elevate-up card-gradient`}>
+            className={`card  rounded-4 border  hover-elevate-up  bg-light`}>
             <div
                 style={{
                     background: `radial-gradient(50vw circle at ${position.x}px ${position.y}px, #F5F7FA09, transparent 50%)`,
