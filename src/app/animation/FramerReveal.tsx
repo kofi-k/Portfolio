@@ -25,7 +25,7 @@ export const FramerReveal = ({
     }, [isInView, mainControls, slideControls]);
 
     return (
-        <div ref={ref} className={`${className}  overflow-hidden position-relative`}>
+        <div ref={ref} className={`${className} overflow-hidden position-relative`}>
             <motion.div
                 variants={
                     {
@@ -35,7 +35,7 @@ export const FramerReveal = ({
                 }
                 initial={'hidden'}
                 animate={isInView ? 'visible' : 'hidden'}
-                transition={{duration: 0.5, ease: "easeOut", delay: 0.25}}
+                transition={{duration: 0.5, ease: "easeOut", delay: 0.35}}
             >
                 {children}
             </motion.div>
