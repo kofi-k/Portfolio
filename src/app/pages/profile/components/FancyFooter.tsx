@@ -7,7 +7,6 @@ import {FramerReveal} from "../../../animation/FramerReveal.tsx";
 export const FancyFooter = () => {
     return (
         <>
-            <div className={'custom-separator mt-20'}/>
             <div className={'backlight-top'}>
                 <Content>
                     <div className={'row g-5 g-xl-8 my-10 mb-10'}>
@@ -19,15 +18,18 @@ export const FancyFooter = () => {
                                     </h3>
                                 </FramerReveal>
                                 <FramerReveal className={'w-auto'}>
-                                    <div
-                                        className='mt-10 fs-6 fw-light me-20 d-flex flex-column '>
-                                        {'Beyond my skills, I bring an insane level of dedication and commitment to see your project through. ' +
-                                            'With each project, I push my work to new horizons, always putting quality first. Always exploring...'}
-                                    </div>
+                                    <p className='mt-10 fs-6 fw-light me-20 d-flex flex-column '>
+                                        {'Beyond my skills, it is very important to me that I pull this off for you and for me.'}
+                                    </p>
+                                </FramerReveal>
+                                <FramerReveal className={'w-auto '}>
+                                    <p className='fs-6 fw-light me-20 d-flex flex-column '>
+                                        {'With each project, I push my work to new horizons, always putting quality first. Always exploring... '}
+                                    </p>
                                 </FramerReveal>
                             </div>
 
-                            <div className={'d-flex flex-column mt-10'}>
+                            <div className={'d-flex flex-column mt-5'}>
                                 <span className={'text-uppercase fw-bolder mb-2'}>Let's connect</span>
                                 <div className={'row g-xl-5 g-4 g-xxl-8 '}>
                                     {
@@ -86,8 +88,6 @@ export const FancyFooter = () => {
                     </div>
                 </Content>
             </div>
-            <div className={'custom-separator '}/>
-
         </>
     );
 };

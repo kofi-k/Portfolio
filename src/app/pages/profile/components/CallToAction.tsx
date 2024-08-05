@@ -1,20 +1,45 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import {KTIcon} from "../../../../_metronic/helpers";
+import {motion, useScroll, useTransform} from "framer-motion";
+import Lenis from "lenis";
 
 export const CallToAction = () => {
+    const container = useRef<HTMLDivElement | null>(null);
+
+    const {scrollYProgress} = useScroll({
+        target: container,
+        offset: ["start end", "end start"],
+    });
+
+    const scale = useTransform(scrollYProgress, [0, 0.75, 1], [0.75, 1, 0.75]);
+
+
+    useEffect(() => {
+        const lenis = new Lenis();
+
+        function raf(time: number) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    }, []);
+
+
     return (
-        <>
-            <div
-                className='card mb-10 mb-xl-8 bg-primary  my-20  rounded-4  kofi-masked-cta kofi-masked-block '
+        <div ref={container}>
+            <motion.div
+                className='card mb-10 mb-xl-8 bg-primary  my-20  rounded-4   '
                 style={{
                     backgroundImage: 'linear-gradient(135deg, #006AE6, #2A6DF5)',
+                    scale,
                 }}
             >
                 <div className='card-body my-10'>
                     <div className='d-flex flex-column mx-15'>
                         <h1 className='text-start fs-4hx text-white fw-bolder mb-5 w-100'>
-                            Ready to experience some <span
-                            className={'text-decoration-underline fst-italic d-xxl-block'}>magic?</span>
+                            Ready to code your kick ass <span
+                            className={'text-decoration-underline fst-italic d-xxl-block'}>projects to life?</span>
                         </h1>
 
                         <div className={'row mt-10 g-sm-5 g-xl-4 g-xxl-4 '}>
@@ -36,12 +61,7 @@ export const CallToAction = () => {
                         </div>
                     </div>
                 </div>
-                {/*<div className={'kofi-masked-cta-content  kofi-masked-content at-top-right '}>*/}
-                {/*    <p className={'fs-2x in-view'}>*/}
-                {/*        I will code your kick ass projects to reality ✨*/}
-                {/*    </p>*/}
-                {/*</div>*/}
-            </div>
-        </>
+            </motion.div>
+        </div>
     );
 };

@@ -21,15 +21,15 @@ export const WhatIOffer = () => {
     }, [isInView, mainControls]);
 
     return (
-        <div className={'d-flex flex-column flex-center backlight-top mb-20 '}>
+        <div className={'d-flex flex-column flex-center backlight-top mb-20 vh-100 '}>
             <FramerReveal className={'w-auto mt-20'}>
                 <div className={'display-3 fw-bold mb-5'}>What I can help you with...</div>
             </FramerReveal>
             <FramerReveal className={'w-auto'}>
-                <span className={'fs-3'}>Unleash the full spectrum of magic </span>
+                <span className={'fs-3'}>I'm here to guarantee you quality </span>
             </FramerReveal>
             <FramerReveal className={'w-auto'}>
-                <span className={'fs-3'}>for your web and mobile development needs.</span>
+                <span className={'fs-3'}>and delightful applications with subtle animations.✨</span>
             </FramerReveal>
             <div className={''}>
                 <Content>

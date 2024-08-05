@@ -26,11 +26,11 @@ export const VoiceOfThePeople = () => {
 
     return (
         <div className={'d-flex flex-column flex-center'}>
-            <FramerReveal className={'w-auto mt-15'}>
-                <h2 className={'display-3 fw-bold '}>...hear what the people say</h2>
+            <FramerReveal className={'w-auto mt-20'}>
+                <h2 className={'display-3 fw-bold text-center'}>...hear what the people say</h2>
             </FramerReveal>
             <FramerReveal className={'w-auto mb-10'}>
-                <span className={'fs-3 '}>What my clients say about my work</span>
+                <span className={'fs-3 '}>What clients say about me and my work</span>
             </FramerReveal>
             <div className={'row g-5 g-xl-8 mt-7 align-items-center '}>
                 <div
@@ -52,7 +52,7 @@ export const VoiceOfThePeople = () => {
                         alt='img'
                     />
                 </div>
-                <div className={'col-lg-6 col-xl-6 col-xxl-6 col-md-12 col-sm-12 g-5 mb-20 d-md-'}>
+                <div className={'col-lg-6 col-xl-6 col-xxl-6 col-md-12 col-sm-12 g-5 mb-20 mb-xxl-20 d-md-'}>
                     <div className={'row g-4'}>
                         {
                             reviews.map((item, index) => (
@@ -133,15 +133,15 @@ const reviews: Props[] = [
     {
         nameOfClient: 'Maloe Nartey',
         clientPosition: 'CEO, M&M Medical Center',
-        clientReview: 'Kofi is a great designer. He has a lot of experience in designing user interfaces and user experiences for web and mobile applications. I highly recommend him for your design needs.',
+        clientReview: `Kofi is the hardest working person you'll ever find. All he cars about is getting the job done and done well. He's a great asset to any team.`,
         rating: 4,
         color: 'success'
     },
     {
         nameOfClient: 'Siddy Innocent',
         clientPosition: 'CEO - Labelkin, SafeNet ',
-        clientReview: 'Kofi is a great chess player. He has a lot of experience in playing chess and has won many tournaments. I highly recommend him for your chess needs.',
-        rating: 3,
+        clientReview: `This guy is a genie🧞out of the bottle. I never thought quality work and elegant code could co-exist. I know my go-to dev for any project now💯`,
+        rating: 5,
         color: 'info'
     },
 ]
