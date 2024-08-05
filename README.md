@@ -1,6 +1,6 @@
 # Kofi K. Profile
 
-This is a portfolio site for meself. I'm making this with react, typesccript and boostrap. 
+This is a portfolio site for meself. I'm making this with react, typescript and bootstrap. 
 Oh yeah there's framer motion too for my journey into the animationland. 
 
 
