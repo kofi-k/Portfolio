@@ -13,6 +13,10 @@
   background: radial-gradient(100vw circle at 50vw 0%, $kofik-s-backlight, transparent 50%);
 }
 
+.backlight-bottom {
+  background: radial-gradient(100vw circle at 50vw 100%, $kofik-s-backlight, transparent 50%);
+}
+
 .kofi-block.is-frosted {
   background: $kofik-s-container-frosted;
   -webkit-backdrop-filter: saturate(150%) blur(12px);
