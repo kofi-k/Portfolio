@@ -2,7 +2,7 @@
   "name": "kofi-k",
   "homepage": "https://kofi-k.github.io/",
   "private": true,
-  "version": "8.2.4",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
