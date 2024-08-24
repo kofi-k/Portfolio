@@ -133,7 +133,7 @@ const reviews: Props[] = [
     {
         nameOfClient: 'Maloe Nartey',
         clientPosition: 'CEO, M&M Medical Center',
-        clientReview: `Kofi is the hardest working person you'll ever find. All he cars about is getting the job done and done well. He's a great asset to any team.`,
+        clientReview: `Kofi is the hardest working person you'll ever find. All he cares about is getting the job done and done well. He's a great asset to any team.`,
         rating: 4,
         color: 'success'
     },
