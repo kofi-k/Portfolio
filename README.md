@@ -1,6 +1,8 @@
 # Kofi K. Profile
 
-This is a profile page for Kofi K. It is built with React and Vite.
+This is a portfolio site for meself. I'm making this with react, typescript and bootstrap. 
+Oh yeah there's framer motion too for my journey into the animationland. 
+
 
 Visit the main site at [kofi-k](https://kofik.github.io/kofi-k-profile-page/)
 
