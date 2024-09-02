@@ -13,14 +13,11 @@ const PrivateRoutes = () => {
         <Routes>
             <Route element={<MasterLayout/>}>
                 <Route path='/*' element={<Navigate to='/profile'/>}/>
-                {/* Pages */}
                 <Route path='profile' element={
                     <SuspensedView>
                         <ProfileWrapper/>
                     </SuspensedView>
                 }/>
-                {/* Page Not Found */}
-                {/*<Route path='*' element={<Navigate to='/error/404'/>}/>*/}
             </Route>
         </Routes>
     )
@@ -32,7 +29,7 @@ const SuspensedView: FC<WithChildren> = ({children}) => {
         barColors: {
             '0': baseColor,
         },
-        barThickness: 1,
+        barThickness: 3,
         shadowBlur: 5,
     })
     return <Suspense fallback={<TopBarProgress/>}>{children}</Suspense>
